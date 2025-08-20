@@ -1,38 +1,25 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
 
-export function ScrollToTopIndicator({
-  isContactInView,
+export default function ScrollIndicator({
+  isHeroInView,
+  isMounted,
 }: {
-  isContactInView: boolean;
+  isHeroInView: boolean;
+  isMounted: boolean;
 }) {
   const [hasDelayed, setHasDelayed] = useState(false);
 
   useEffect(() => {
-    if (isContactInView && !hasDelayed) {
+    if (isMounted && isHeroInView && !hasDelayed) {
       const timer = setTimeout(() => {
         setHasDelayed(true);
-      }, 2000);
+      }, 4000);
       return () => clearTimeout(timer);
     }
-  }, [isContactInView, hasDelayed]);
-
-  const scrollToTop = () => {
-    const scrollableElement = document.querySelector(".snap-container");
-    if (scrollableElement) {
-      scrollableElement.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  };
+  }, [isMounted, isHeroInView, hasDelayed]);
 
   const scrollIndicatorVariants: Variants = {
     hidden: {
@@ -52,18 +39,16 @@ export function ScrollToTopIndicator({
       className="absolute bottom-10 right-10 md:bottom-24 md:right-12 z-50"
       variants={scrollIndicatorVariants}
       initial="hidden"
-      animate={isContactInView && hasDelayed ? "visible" : "hidden"}
-      onClick={scrollToTop}
-      style={{ cursor: "pointer" }}
+      animate={isMounted && isHeroInView && hasDelayed ? "visible" : "hidden"}
     >
-      <div className="flex flex-col items-center space-y-3 text-primary">
-        <div className="h-24 w-px bg-primary/30" />
+      <div className="flex cursor-default flex-col items-center space-y-3 text-primary">
         <span
           className="font-sans text-xs uppercase tracking-widest"
           style={{ writingMode: "vertical-rl" }}
         >
-          Top
+          Scroll
         </span>
+        <div className="h-24 w-px bg-primary/30" />
       </div>
     </motion.div>
   );

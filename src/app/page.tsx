@@ -1,7 +1,7 @@
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
-import ContactSection from "@/components/ContactSection";
+import HeroSection from "@/components/Sections/Hero/HeroSection";
+import AboutSection from "@/components/Sections/About/AboutSection";
+import ServicesSection from "@/components/Sections/Services/ServicesSection";
+import ContactSection from "@/components/Sections/Contact/ContactSection";
 
 export default function HomePage() {
   const jsonLd = {
@@ -41,20 +41,18 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="snap-container">
-        <section className="snap-section">
-          <HeroSection />
-        </section>
-        <section className="snap-section">
-          <AboutSection />
-        </section>
-        <section className="snap-section">
-          <ServicesSection />
-        </section>
-        <section className="snap-section">
-          <ContactSection />
-        </section>
-      </main>
+      <section className="snap-section">
+        <HeroSection />
+      </section>
+      <section className="snap-section">
+        <AboutSection />
+      </section>
+      <section className="snap-section">
+        <ServicesSection />
+      </section>
+      <section className="snap-section">
+        <ContactSection />
+      </section>
     </>
   );
 }
