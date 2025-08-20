@@ -51,7 +51,7 @@ export function ScrollToTopIndicator({
 
   return (
     <motion.div
-      className="absolute bottom-10 right-10 md:bottom-24 md:right-12 z-50"
+      className="absolute bottom-32 right-10 md:bottom-24 md:right-12 z-50"
       variants={scrollIndicatorVariants}
       initial="hidden"
       animate={

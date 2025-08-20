@@ -55,20 +55,20 @@ export default function ServicesClient({ content }: ServicesContentProps) {
     >
       <div className="container mx-auto max-w-7xl px-6 relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 2xl:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <motion.h2 className="font-serif font-black text-3xl md:text-4xl lg:text-8xl mb-6 gradient-text leading-tighter">
+          <motion.h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter">
             {content.title}
           </motion.h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
             {content.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:place-content-center md:place-items-center md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 2xl:gap-8 mb-12">
           {content.services.map((service, index) => {
             const IconComponent = iconMap[service.icon];
             return (
@@ -79,21 +79,21 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-background border-2 border-primary p-8 h-full relative hover-lift">
-                  <div className="flex items-center justify-start gap-4 mb-4">
+                <div className="md:w-78 lg:w-full bg-background border-2 border-primary p-4 xl:p-6 2xl:p-8 h-full relative hover-lift">
+                  <div className="flex items-center justify-start gap-4 pb-0 lg:pb-4">
                     {IconComponent && (
                       <IconComponent className="h-8 w-8 text-primary" />
                     )}
-                    <h3 className="font-serif font-bold text-2xl text-card-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="font-serif font-bold text-lg lg:text-2xl text-card-foreground group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </h3>
                   </div>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-base">
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm lg:text-base hidden md:block">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3 mb-8 hidden lg:block">
                     {service.features.map((feature, featureIndex) => (
                       <motion.li
                         key={featureIndex}

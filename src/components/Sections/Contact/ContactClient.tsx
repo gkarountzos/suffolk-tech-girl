@@ -85,7 +85,7 @@ export default function ContactClient({
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif font-black text-3xl md:text-4xl lg:text-8xl mb-6 gradient-text leading-tighter">
+              <h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter">
                 {content.title}
               </h2>
               <FlipWords

@@ -66,14 +66,14 @@ export default function AboutClient({ content }: AboutContentProps) {
       id="about"
     >
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isMounted && isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2
-              className="font-serif font-bold text-3xl md:text-4xl lg:text-8xl mb-6 gradient-text leading-tighter"
+              className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -87,7 +87,7 @@ export default function AboutClient({ content }: AboutContentProps) {
             {content.paragraphs.map((text, index) => (
               <motion.p
                 key={index}
-                className="text-lg text-muted-foreground mb-6 leading-relaxed"
+                className="text-sm sm:text-md lg:text-lg text-muted-foreground pb-2 lg:pb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
@@ -103,13 +103,13 @@ export default function AboutClient({ content }: AboutContentProps) {
             animate={isMounted && isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Card className="p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-background">
+            <Card className="p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-background">
               <motion.div
                 className="space-y-6"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
-                <div className="border-2 border-primary/30 w-full h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center">
+                <div className="border-2 border-primary/30 w-full h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center mb-0 sm:mb-4">
                   <motion.div className="text-center">
                     <UsersRoundIcon className="h-16 w-16 text-primary mx-auto mb-4" />
                     <p className="text-lg font-semibold text-foreground">
@@ -121,14 +121,17 @@ export default function AboutClient({ content }: AboutContentProps) {
                   </motion.div>
                 </div>
 
-                <div className="text-center">
+                <div className="text-center hidden sm:block">
                   <h3 className="font-serif font-semibold text-xl mb-2">
                     {content.card.featuresSection.title}
                   </h3>
                   <div className="grid grid-cols-2 gap-y-2 text-left text-muted-foreground">
                     {/* Map over the combined features array */}
                     {features.map((feature, index) => (
-                      <p key={index}>
+                      <p
+                        key={index}
+                        className="text-sm sm:text-base lg:text-lg"
+                      >
                         {feature.icon}
                         {feature.text}
                       </p>
