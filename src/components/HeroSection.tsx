@@ -1,39 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Monitor, Smartphone, Wifi } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { Monitor, SmartphoneIcon, Wifi } from "lucide-react";
+import FancyButton from "@/components/ui/FancyButton";
+import { FlipWords } from "@/components/ui/flip-words";
+import { words } from "@/constants/words";
+import ScrollIndicator from "@/components/ScrollIndicator";
+import { useRef } from "react";
 
 export default function HeroSection() {
+  const heroRef = useRef(null);
+  const isHeroInView = useInView(heroRef, { amount: 0.5 });
   return (
-    <section className="h-screen w-full snap-start flex items-center justify-center overflow-hidden bg-muted/10">
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-      </div>
-
+    <section
+      ref={heroRef}
+      className="h-screen w-full snap-start flex items-center justify-center overflow-hidden bg-muted/10"
+    >
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -50,14 +32,19 @@ export default function HeroSection() {
             Suffolk Tech Help
           </motion.h1>
 
-          <motion.p
+          <motion.div
             className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Local, Friendly Tech Support
-          </motion.p>
+            <FlipWords
+              words={words}
+              className="text-muted-foreground p-0"
+              duration={1500}
+            />
+            Tech Support
+          </motion.div>
 
           <motion.p
             className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed"
@@ -75,24 +62,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold group hover-lift"
-            >
-              Get Help Now
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-4 text-lg font-semibold hover-lift bg-transparent"
-            >
-              Learn More
-            </Button>
+            <FancyButton href="#contact">Get Help Now</FancyButton>
           </motion.div>
 
           <motion.div
-            className="flex justify-center gap-8 opacity-60"
+            className="flex justify-center gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.6 }}
             transition={{ duration: 1, delay: 1 }}
@@ -116,7 +90,7 @@ export default function HeroSection() {
                 delay: 0.5,
               }}
             >
-              <Smartphone className="h-8 w-8 text-accent" />
+              <SmartphoneIcon className="h-8 w-8 text-primary" />
             </motion.div>
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -132,6 +106,8 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
+
+      <ScrollIndicator isHeroInView={isHeroInView} />
     </section>
   );
 }
