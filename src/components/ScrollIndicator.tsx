@@ -14,7 +14,7 @@ export default function ScrollIndicator({
     if (isHeroInView && !hasDelayed) {
       const timer = setTimeout(() => {
         setHasDelayed(true);
-      }, 2000);
+      }, 4000);
       return () => clearTimeout(timer);
     }
   }, [isHeroInView, hasDelayed]);

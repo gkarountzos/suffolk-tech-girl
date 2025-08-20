@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import SocialsCTA from "@/components/SocialsCTA";
+import AnimatedLogo from "@/components/AnimatedLogo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,14 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <head>
-        <style>{`
-html {
-  font-family: ${inter.style.fontFamily};
-}
-        `}</style>
-      </head>
-      <body>{children}</body>
+      <body>
+        <AnimatedLogo />
+        {children}
+        <SocialsCTA />
+      </body>
     </html>
   );
 }

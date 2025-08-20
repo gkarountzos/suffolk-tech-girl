@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   Monitor,
   Smartphone,
@@ -11,12 +11,10 @@ import {
   Cloud,
 } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
-import { Footer } from "@/components/Footer";
 
 export default function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const services = [
     {
