@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import SocialsCTA from "@/components/CTA/SocialsCTA";
-import AnimatedLogo from "@/components/Header/AnimatedLogo";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,8 +82,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
+        <Header />
         <main className="snap-container">{children}</main>
-        <SocialsCTA />
+        {/* <SocialsCTA /> */}
       </body>
     </html>
   );
