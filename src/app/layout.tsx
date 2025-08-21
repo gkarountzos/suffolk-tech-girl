@@ -83,7 +83,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
-        <AnimatedLogo />
         <main className="snap-container">{children}</main>
         <SocialsCTA />
       </body>

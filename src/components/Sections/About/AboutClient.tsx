@@ -62,7 +62,7 @@ export default function AboutClient({ content }: AboutContentProps) {
   return (
     <section
       ref={ref}
-      className="h-screen w-full snap-start flex items-center bg-muted/10 py-12"
+      className="h-screen w-full snap-start flex items-center bg-muted/20 py-12"
       id="about"
     >
       <div className="container mx-auto px-6">
@@ -73,7 +73,7 @@ export default function AboutClient({ content }: AboutContentProps) {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2
-              className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
+              className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -109,9 +109,9 @@ export default function AboutClient({ content }: AboutContentProps) {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
-                <div className="border-2 border-primary/30 w-full h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center mb-0 sm:mb-4">
+                <div className="border-2 border-primary/30 w-full h-32 lg:h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center mb-0 sm:mb-4">
                   <motion.div className="text-center">
-                    <UsersRoundIcon className="h-16 w-16 text-primary mx-auto mb-4" />
+                    <UsersRoundIcon className="h-12 w-12 lg:h-16 lg:w-16 text-primary mx-auto mb-0 lg:mb-4" />
                     <p className="text-lg font-semibold text-foreground">
                       {content.card.imageSection.title}
                     </p>
@@ -121,20 +121,19 @@ export default function AboutClient({ content }: AboutContentProps) {
                   </motion.div>
                 </div>
 
-                <div className="text-center hidden sm:block">
+                <div className=" hidden sm:block">
                   <h3 className="font-serif font-semibold text-xl mb-2">
                     {content.card.featuresSection.title}
                   </h3>
                   <div className="grid grid-cols-2 gap-y-2 text-left text-muted-foreground">
                     {/* Map over the combined features array */}
                     {features.map((feature, index) => (
-                      <p
-                        key={index}
-                        className="text-sm sm:text-base lg:text-lg"
-                      >
+                      <div key={index} className="flex items-center">
                         {feature.icon}
-                        {feature.text}
-                      </p>
+                        <p className="text-sm sm:text-base 2xl:text-lg">
+                          {feature.text}
+                        </p>
+                      </div>
                     ))}
                   </div>
                 </div>

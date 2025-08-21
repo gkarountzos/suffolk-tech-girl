@@ -51,19 +51,19 @@ export default function ServicesClient({ content }: ServicesContentProps) {
   return (
     <section
       ref={ref}
-      className="h-screen w-full snap-start flex flex-col justify-center bg-muted/10 relative overflow-hidden"
+      className="h-screen w-full snap-start flex flex-col justify-center bg-muted/10 overflow-hidden"
     >
-      <div className="container mx-auto max-w-7xl px-6 relative z-10">
+      <div className="container mx-auto max-w-7xl px-6 z-10">
         <motion.div
           className="text-center mb-8 2xl:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <motion.h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter">
+          <motion.h2 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter">
             {content.title}
           </motion.h2>
-          <p className="text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
             {content.subtitle}
           </p>
         </motion.div>
@@ -82,9 +82,9 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                 <div className="md:w-78 lg:w-full bg-background border-2 border-primary p-4 xl:p-6 2xl:p-8 h-full relative hover-lift">
                   <div className="flex items-center justify-start gap-4 pb-0 lg:pb-4">
                     {IconComponent && (
-                      <IconComponent className="h-8 w-8 text-primary" />
+                      <IconComponent className="h-6 w-6 lg:h-8 lg:w-8 text-primary" />
                     )}
-                    <h3 className="font-serif font-bold text-lg lg:text-2xl text-card-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="font-serif font-bold text-base md:text-lg lg:text-2xl text-card-foreground group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </h3>
                   </div>
@@ -119,7 +119,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
         </div>
 
         <motion.div
-          className="flex items-center justify-center mt-16"
+          className="flex items-center justify-center mt-0 lg:mt-16 "
           initial={{ opacity: 0, y: 20 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}

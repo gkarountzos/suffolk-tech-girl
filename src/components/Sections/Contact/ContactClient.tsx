@@ -73,19 +73,19 @@ export default function ContactClient({
   return (
     <section
       ref={ref}
-      className="h-screen w-full snap-start flex flex-col bg-muted/10"
+      className="h-screen w-full snap-start flex flex-col bg-muted/20"
       id="contact"
     >
       <div className="flex-1 flex items-center justify-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <div className="flex flex-col gap-4">
             <motion.div
-              className="text-center mb-12"
+              className="text-center pb-4 lg:pb-12"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter">
+              <h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 lg:pb-6 gradient-text leading-tighter">
                 {content.title}
               </h2>
               <FlipWords
@@ -103,7 +103,7 @@ export default function ContactClient({
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-2 lg:gap-4">
                 <FloatingInput
                   name="name"
                   type="text"
@@ -120,14 +120,14 @@ export default function ContactClient({
                   onChange={handleInputChange}
                   label={content.form.emailLabel}
                 />
+                <FloatingTextarea
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  label={content.form.messageLabel}
+                />
               </div>
-              <FloatingTextarea
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleInputChange}
-                label={content.form.messageLabel}
-              />
               <motion.div
                 className="flex items-center justify-center pt-4"
                 initial={{ opacity: 0, y: 30 }}

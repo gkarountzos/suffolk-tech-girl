@@ -6,7 +6,7 @@ export const heroContent = {
   subtitleSuffix: "Tech Support",
   description:
     "Professional technology solutions delivered with a personal touch. We're your neighborhood experts for all things tech.",
-  buttonText: "Get Help Now",
+  buttonText: "Reach Out",
   buttonLink: "#contact",
 };
 

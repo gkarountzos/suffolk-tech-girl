@@ -6,6 +6,7 @@ import FancyButton from "@/components/ui/FancyButton";
 import { FlipWords } from "@/components/ui/flip-words";
 import ScrollIndicator from "@/components/CTA/ScrollIndicator";
 import { useEffect, useRef, useState } from "react";
+import AnimatedLogo from "@/components/Header/AnimatedLogo";
 
 type HeroClientProps = {
   content: {
@@ -32,6 +33,8 @@ export default function HeroClient({ content }: HeroClientProps) {
       ref={heroRef}
       className="h-screen w-full snap-start flex items-center justify-center overflow-hidden bg-muted/10"
     >
+      <AnimatedLogo isHeroInView={isHeroInView} />
+
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -40,7 +43,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           className="max-w-4xl mx-auto"
         >
           <motion.h1
-            className="font-serif font-black text-5xl md:text-7xl lg:text-8xl mb-6 gradient-text leading-tight"
+            className="font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-6 gradient-text leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -49,7 +52,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           </motion.h1>
 
           <motion.div
-            className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium"
+            className="text-xl md:text-2xl text-muted-foreground pb-2 lg:pb-4 font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -64,7 +67,7 @@ export default function HeroClient({ content }: HeroClientProps) {
 
           {/* Use the description from props */}
           <motion.p
-            className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-base md:text-xl text-foreground/80 pb-6 lg:pb-12 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -73,7 +76,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-8 lg:pb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}

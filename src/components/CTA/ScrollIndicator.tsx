@@ -43,12 +43,12 @@ export default function ScrollIndicator({
     >
       <div className="flex cursor-default flex-col items-center space-y-3 text-primary">
         <span
-          className="font-sans text-xs uppercase tracking-widest"
+          className="font-sans text-sm font-bold uppercase tracking-widest"
           style={{ writingMode: "vertical-rl" }}
         >
           Scroll
         </span>
-        <div className="h-24 w-px bg-primary/30" />
+        <div className="h-24 w-px bg-primary" />
       </div>
     </motion.div>
   );

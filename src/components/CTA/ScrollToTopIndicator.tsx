@@ -63,7 +63,7 @@ export function ScrollToTopIndicator({
       <div className="flex flex-col items-center space-y-3 text-primary">
         <div className="h-24 w-px bg-primary/30" />
         <span
-          className="font-sans text-xs uppercase tracking-widest"
+          className="font-sans text-small font-bold uppercase tracking-widest"
           style={{ writingMode: "vertical-rl" }}
         >
           Top
