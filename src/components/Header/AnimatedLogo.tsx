@@ -2,50 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import useBreakpoint from "@/hooks/useBreakpoint";
-import {
-  DesktopLogoVariants,
-  LaptopLogoVariants,
-  LargeLaptopLogoVariants,
-  MobileLogoVariants,
-  TabletLogoVariants,
-} from "@/constants/LogoAnimationVariants";
 
-export default function AnimatedLogo({ scrolled }: { scrolled: boolean }) {
-  const currentBreakpoint = useBreakpoint();
-
+export default function AnimatedLogo() {
   return (
-    <motion.div
-      className="fixed z-50"
-      variants={
-        currentBreakpoint === "xs"
-          ? MobileLogoVariants
-          : currentBreakpoint === "sm"
-          ? MobileLogoVariants
-          : currentBreakpoint === "md"
-          ? TabletLogoVariants
-          : currentBreakpoint === "lg"
-          ? LaptopLogoVariants
-          : currentBreakpoint === "xl"
-          ? LargeLaptopLogoVariants
-          : currentBreakpoint === "txl"
-          ? DesktopLogoVariants
-          : DesktopLogoVariants
-      }
-      initial="top"
-      animate={scrolled ? "scrolled" : "top"}
-      transition={{
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        duration: 0.8,
-      }}
-    >
+    <motion.div className="fixed top-2 left-4 z-50">
       <Image
         src="logo.svg"
         alt="Suffolk Tech Help Logo"
-        width={256}
-        height={256}
+        width={64}
+        height={64}
         priority
         quality={100}
       />
