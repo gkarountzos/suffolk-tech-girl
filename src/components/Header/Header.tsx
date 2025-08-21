@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useAnimationControls, Variants } from "framer-motion";
-import useBreakpoint from "@/hooks/useBreakpoint";
 import {
   CogIcon,
   FacebookIcon,
@@ -72,7 +71,7 @@ export default function Header() {
         ))}
       </div>
 
-      <CogIcon size={24} className="animate-spin" />
+      <CogIcon size={36} className="animate-[spin_6s_linear_infinite]" />
 
       <div className="flex items-center justify-between gap-4">
         {reachOutLinks.map((link, index) => (

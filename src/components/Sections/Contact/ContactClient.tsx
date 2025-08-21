@@ -120,14 +120,14 @@ export default function ContactClient({
                   onChange={handleInputChange}
                   label={content.form.emailLabel}
                 />
-                <FloatingTextarea
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  label={content.form.messageLabel}
-                />
               </div>
+              <FloatingTextarea
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleInputChange}
+                label={content.form.messageLabel}
+              />
               <motion.div
                 className="flex items-center justify-center pt-4"
                 initial={{ opacity: 0, y: 30 }}
