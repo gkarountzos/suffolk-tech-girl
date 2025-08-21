@@ -38,7 +38,7 @@ const reachOutLinks: SocialLink[] = [
   },
 ];
 
-export default function Header({ isHeroInView }: { isHeroInView: boolean }) {
+export default function Header() {
   const controls = useAnimationControls();
 
   const DesktopLogoVariants: Variants = {
