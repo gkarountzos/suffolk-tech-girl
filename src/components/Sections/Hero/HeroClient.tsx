@@ -7,6 +7,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import ScrollIndicator from "@/components/CTA/ScrollIndicator";
 import { useEffect, useRef, useState } from "react";
 import AnimatedLogo from "@/components/Header/AnimatedLogo";
+import Header from "@/components/Header/Header";
 
 type HeroClientProps = {
   content: {
@@ -31,10 +32,9 @@ export default function HeroClient({ content }: HeroClientProps) {
   return (
     <section
       ref={heroRef}
-      className="h-screen w-full snap-start flex items-center justify-center overflow-hidden bg-muted/10"
+      className="h-screen w-full flex items-center justify-center overflow-hidden bg-muted/10"
     >
-      <AnimatedLogo isHeroInView={isHeroInView} />
-
+      <Header />
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -43,7 +43,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           className="max-w-4xl mx-auto"
         >
           <motion.h1
-            className="font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-6 gradient-text leading-tight"
+            className="font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-4 lg:pb-6 gradient-text leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}

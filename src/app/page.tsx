@@ -41,16 +41,16 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="snap-section">
+      <section>
         <HeroSection />
       </section>
-      <section className="snap-section">
+      <section>
         <AboutSection />
       </section>
-      <section className="snap-section">
+      <section>
         <ServicesSection />
       </section>
-      <section className="snap-section">
+      <section>
         <ContactSection />
       </section>
     </>

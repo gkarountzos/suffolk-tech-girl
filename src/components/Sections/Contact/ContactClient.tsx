@@ -73,7 +73,7 @@ export default function ContactClient({
   return (
     <section
       ref={ref}
-      className="h-screen w-full snap-start flex flex-col bg-muted/20"
+      className="h-screen w-full flex flex-col bg-muted/10"
       id="contact"
     >
       <div className="flex-1 flex items-center justify-center">

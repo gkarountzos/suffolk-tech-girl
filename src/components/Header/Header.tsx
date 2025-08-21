@@ -52,7 +52,7 @@ export default function Header() {
 
   return (
     <motion.div
-      className="fixed z-50 flex gap-4 "
+      className="absolute z-50 flex gap-4 "
       variants={DesktopLogoVariants}
       initial="initial"
       animate={controls}

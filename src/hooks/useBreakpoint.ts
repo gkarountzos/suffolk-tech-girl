@@ -20,8 +20,8 @@ const useBreakpoint = () => {
         const width = window.innerWidth;
         let currentBreakpoint = "xs";
 
-        if (width >= breakpoints["2xl"]) {
-          currentBreakpoint = "2xl";
+        if (width >= breakpoints["txl"]) {
+          currentBreakpoint = "txl";
         } else if (width >= breakpoints.xl) {
           currentBreakpoint = "xl";
         } else if (width >= breakpoints.lg) {

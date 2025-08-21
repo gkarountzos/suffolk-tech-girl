@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import {
@@ -12,21 +11,8 @@ import {
   TabletLogoVariants,
 } from "@/constants/LogoAnimationVariants";
 
-export default function AnimatedLogo({
-  isHeroInView,
-}: {
-  isHeroInView: boolean;
-}) {
+export default function AnimatedLogo({ scrolled }: { scrolled: boolean }) {
   const currentBreakpoint = useBreakpoint();
-  const controls = useAnimationControls();
-
-  useEffect(() => {
-    if (!isHeroInView) {
-      controls.start("final");
-    } else {
-      controls.start("initial");
-    }
-  }, [isHeroInView, controls, currentBreakpoint]);
 
   return (
     <motion.div
@@ -46,8 +32,14 @@ export default function AnimatedLogo({
           ? DesktopLogoVariants
           : DesktopLogoVariants
       }
-      initial="initial"
-      animate={controls}
+      initial="top"
+      animate={scrolled ? "scrolled" : "top"}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+      }}
     >
       <Image
         src="logo.svg"

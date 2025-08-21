@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
+import PageWrapper from "@/components/PageWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,9 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
-        <Header />
-        <main className="snap-container">{children}</main>
-        {/* <SocialsCTA /> */}
+        <PageWrapper>{children}</PageWrapper>
       </body>
     </html>
   );
