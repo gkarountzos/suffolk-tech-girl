@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -84,6 +85,7 @@ export default function RootLayout({
       <body>
         <PageWrapper>{children}</PageWrapper>
       </body>
+      <GoogleAnalytics gaId={process.env.GA_ID!} />
     </html>
   );
 }
