@@ -76,23 +76,31 @@ export default function ContactClient({
     });
     setIsSubmitting(false);
     try {
-      const audioContext = new (window.AudioContext ||
-        (window as any).webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
+      const extendedWindow = window as Window & {
+        webkitAudioContext?: AudioContext;
+      };
 
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      const AudioContext =
+        extendedWindow.AudioContext || extendedWindow.webkitAudioContext;
 
-      oscillator.type = "sine";
-      oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(
-        0.00001,
-        audioContext.currentTime + 0.5
-      );
+      if (AudioContext) {
+        const audioContext = new AudioContext();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
 
-      oscillator.start();
-      oscillator.stop(audioContext.currentTime + 0.5);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.00001,
+          audioContext.currentTime + 0.5
+        );
+
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.5);
+      }
     } catch (error) {
       console.error("Could not play audio:", error);
     }
