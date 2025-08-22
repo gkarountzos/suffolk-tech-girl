@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,6 +84,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
         <PageWrapper>{children}</PageWrapper>
+        <Toaster
+          toastOptions={{
+            unstyled: true,
+            className:
+              "border-2 border-primary bg-background flex gap-2 font-sans font-medium p-4",
+          }}
+        />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>

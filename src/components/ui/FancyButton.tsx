@@ -1,51 +1,61 @@
 import Link from "next/link";
+import { ComponentProps } from "react";
 
 interface IFancyButtonProps {
-  href: string;
+  href?: string;
   children: React.ReactNode;
   className?: string;
+  type?: "button" | "submit" | "reset";
+  [key: string]: any;
 }
 
-const FancyButton = ({ href, children, className }: IFancyButtonProps) => {
-  return (
-    <Link
-      href={href}
-      className={`
-        group 
-        relative 
-        inline-block 
-        cursor-pointer 
-        select-none 
-        no-underline 
-        float-right 
-        bg-background 
-        border-2 
-        border-primary 
-        py-[1.25em] 
-        px-[2em] 
-        font-bold 
-        text-[13px] 
-        tracking-wider 
-        transition-all 
-        duration-300 
-        ease-in-out 
-        hover:bg-primary
-        before:content-[''] 
-        before:absolute 
-        before:top-1/2 
-        before:left-[1.5em] 
-        before:h-[2px] 
-        before:w-[1.5625rem] 
-        before:bg-primary 
-        before:-translate-y-1/2 
-        before:transition-[background,width] 
-        before:duration-300 
-        before:ease-linear 
-        hover:before:bg-white 
-        hover:before:w-[0.9375rem]
-        ${className}
-      `}
-    >
+const FancyButton = ({
+  href,
+  children,
+  className,
+  type = "button",
+  ...rest
+}: IFancyButtonProps) => {
+  const commonClassNames = `
+    group 
+    relative 
+    inline-block 
+    cursor-pointer 
+    select-none 
+    no-underline 
+    float-right 
+    bg-background 
+    border-2 
+    border-primary 
+    py-[1.25em] 
+    px-[2em] 
+    font-bold 
+    text-[13px] 
+    tracking-wider 
+    transition-all 
+    duration-300 
+    ease-in-out 
+    hover:bg-primary
+    before:content-[''] 
+    before:absolute 
+    before:top-1/2 
+    before:left-[1.5em] 
+    before:h-[2px] 
+    before:w-[1.5625rem] 
+    before:bg-primary 
+    before:-translate-y-1/2 
+    before:transition-[background,width] 
+    before:duration-300 
+    before:ease-linear 
+    hover:before:bg-white 
+    hover:before:w-[0.9375rem]
+    disabled:opacity-50
+    disabled:cursor-not-allowed
+    ${className}
+  `;
+
+  const innerContent = (
+    <>
       {/* Top key element */}
       <span
         className="
@@ -119,7 +129,21 @@ const FancyButton = ({ href, children, className }: IFancyButtonProps) => {
           group-hover:w-0
         "
       ></span>
-    </Link>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={commonClassNames} {...rest}>
+        {innerContent}
+      </Link>
+    );
+  }
+
+  return (
+    <button type={type} className={commonClassNames} {...rest}>
+      {innerContent}
+    </button>
   );
 };
 

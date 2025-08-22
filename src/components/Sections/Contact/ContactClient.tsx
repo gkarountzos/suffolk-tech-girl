@@ -14,6 +14,15 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { ScrollToTopIndicator } from "@/components/CTA/ScrollToTopIndicator";
 import Link from "next/link";
 import { reachOutLinks } from "@/constants/contactLinks";
+import {
+  ContactFormData,
+  contactFormSchema,
+} from "@/schemas/contactFormSchema";
+import {
+  sendConfirmationEmail,
+  sendContactEmailToBusiness,
+} from "@/actions/sendEmails";
+import { toast } from "sonner";
 
 type ContactContentProps = {
   content: {
@@ -46,21 +55,63 @@ export default function ContactClient({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const [isMounted, setIsMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof ContactFormData, string>>
+  >({});
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Your form submission logic would go here
-    console.log("Form submitted:", formData);
+    const result = contactFormSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
+
+      setErrors(fieldErrors);
+    } else {
+      setErrors({});
+      setIsSubmitting(true);
+      await sendContactEmailToBusiness(formData);
+      await sendConfirmationEmail(formData);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setIsSubmitting(false);
+      try {
+        const audioContext = new (window.AudioContext ||
+          (window as any).webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.00001,
+          audioContext.currentTime + 0.5
+        );
+
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.5);
+      } catch (error) {
+        console.error("Could not play audio:", error);
+      }
+      toast.success("Message sent successfully!");
+    }
   };
 
   const handleInputChange = (
@@ -152,8 +203,8 @@ export default function ContactClient({
                 animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <FancyButton href="#">
-                  {content.buttonText}
+                <FancyButton type="submit">
+                  {isSubmitting ? "Sending..." : content.buttonText}
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </FancyButton>
               </motion.div>
