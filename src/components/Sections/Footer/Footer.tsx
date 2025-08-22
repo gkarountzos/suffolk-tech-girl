@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FacebookIcon, MailIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 
 interface IFooterProps {

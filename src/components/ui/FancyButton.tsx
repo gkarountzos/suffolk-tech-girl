@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { ComponentProps } from "react";
 
 interface IFancyButtonProps {
   href?: string;
   children: React.ReactNode;
   className?: string;
   type?: "button" | "submit" | "reset";
-  [key: string]: any;
 }
 
 const FancyButton = ({
@@ -14,7 +12,6 @@ const FancyButton = ({
   children,
   className,
   type = "button",
-  ...rest
 }: IFancyButtonProps) => {
   const commonClassNames = `
     group 
@@ -134,14 +131,14 @@ const FancyButton = ({
 
   if (href) {
     return (
-      <Link href={href} className={commonClassNames} {...rest}>
+      <Link href={href} className={commonClassNames}>
         {innerContent}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={commonClassNames} {...rest}>
+    <button type={type} className={commonClassNames}>
       {innerContent}
     </button>
   );

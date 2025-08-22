@@ -14,10 +14,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { ScrollToTopIndicator } from "@/components/CTA/ScrollToTopIndicator";
 import Link from "next/link";
 import { reachOutLinks } from "@/constants/contactLinks";
-import {
-  ContactFormData,
-  contactFormSchema,
-} from "@/schemas/contactFormSchema";
+import { ContactFormData } from "@/schemas/contactFormSchema";
 import {
   sendConfirmationEmail,
   sendContactEmailToBusiness,
@@ -67,51 +64,39 @@ export default function ContactClient({
     message: "",
   });
 
-  const [errors, setErrors] = useState<
-    Partial<Record<keyof ContactFormData, string>>
-  >({});
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = contactFormSchema.safeParse(formData);
-    if (!result.success) {
-      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
+    setIsSubmitting(true);
+    await sendContactEmailToBusiness(formData);
+    await sendConfirmationEmail(formData);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    setIsSubmitting(false);
+    try {
+      const audioContext = new (window.AudioContext ||
+        (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
 
-      setErrors(fieldErrors);
-    } else {
-      setErrors({});
-      setIsSubmitting(true);
-      await sendContactEmailToBusiness(formData);
-      await sendConfirmationEmail(formData);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-      setIsSubmitting(false);
-      try {
-        const audioContext = new (window.AudioContext ||
-          (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
 
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(
+        0.00001,
+        audioContext.currentTime + 0.5
+      );
 
-        oscillator.type = "sine";
-        oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(
-          0.00001,
-          audioContext.currentTime + 0.5
-        );
-
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 0.5);
-      } catch (error) {
-        console.error("Could not play audio:", error);
-      }
-      toast.success("Message sent successfully!");
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.5);
+    } catch (error) {
+      console.error("Could not play audio:", error);
     }
+    toast.success("Message sent successfully!");
   };
 
   const handleInputChange = (
