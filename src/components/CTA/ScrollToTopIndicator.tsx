@@ -43,7 +43,7 @@ export function ScrollToTopIndicator({
 
   return (
     <motion.div
-      className="absolute bottom-32 right-10 md:bottom-32 md:right-12 z-50"
+      className="absolute bottom-24 right-6 md:bottom-32 md:right-12 z-50"
       variants={scrollIndicatorVariants}
       initial="hidden"
       animate={
@@ -53,9 +53,9 @@ export function ScrollToTopIndicator({
       style={{ cursor: "pointer" }}
     >
       <div className="flex flex-col items-center space-y-3 text-primary">
-        <div className="h-24 w-px bg-primary/30" />
+        <div className="h-16 md:h-24 w-px bg-primary/30" />
         <span
-          className="font-sans text-small font-bold uppercase tracking-widest"
+          className="font-sans text-xs sm:text-sm font-bold uppercase tracking-widest"
           style={{ writingMode: "vertical-rl" }}
         >
           Top

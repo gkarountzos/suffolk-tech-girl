@@ -59,7 +59,7 @@ export default function AboutClient({ content }: AboutContentProps) {
       className="h-screen w-full flex items-center bg-muted/10 py-12"
       id="about"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 pt-16">
         <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center h-full">
           <motion.div
             initial={{ opacity: 0, y: -50 }}

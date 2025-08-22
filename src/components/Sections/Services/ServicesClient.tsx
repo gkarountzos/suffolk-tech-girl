@@ -60,7 +60,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
       className="h-screen w-full flex flex-col justify-center bg-muted/10 overflow-hidden"
       id="services"
     >
-      <div className="container mx-auto max-w-7xl px-8 lg:px-16 z-10">
+      <div className="container mx-auto max-w-7xl px-8 lg:px-16 z-10 pt-16">
         <motion.div
           className="text-center mb-4 xl:mb-8 2xl:mb-16"
           initial={{ opacity: 0, y: 20 }}

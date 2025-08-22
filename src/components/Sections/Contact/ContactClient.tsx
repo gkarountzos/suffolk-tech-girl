@@ -12,6 +12,8 @@ import FancyButton from "@/components/ui/FancyButton";
 import { Footer } from "@/components/Sections/Footer/Footer";
 import { FlipWords } from "@/components/ui/flip-words";
 import { ScrollToTopIndicator } from "@/components/CTA/ScrollToTopIndicator";
+import Link from "next/link";
+import { reachOutLinks } from "@/constants/contactLinks";
 
 type ContactContentProps = {
   content: {
@@ -77,10 +79,10 @@ export default function ContactClient({
       id="contact"
     >
       <div className="flex-1 flex items-center justify-center">
-        <div className="container mx-auto px-6 max-w-2xl">
+        <div className="container mx-auto px-6 max-w-2xl pt-16">
           <div className="flex flex-col gap-4">
             <motion.div
-              className="text-center pb-0 lg:pb-12"
+              className="flex flex-col items-center justify-between pb-0 lg:pb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
@@ -88,12 +90,28 @@ export default function ContactClient({
               <h2 className="font-serif font-bold text-5xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 lg:pb-6 gradient-text leading-tighter">
                 {content.title}
               </h2>
-              <FlipWords
-                words={content.flipWords}
-                className="text-muted-foreground p-0"
-                duration={1500}
-              />
-              {content.subtitleSuffix}
+              <div className="pb-4 lg:pb-8">
+                <FlipWords
+                  words={content.flipWords}
+                  className="text-muted-foreground p-0"
+                  duration={1500}
+                />
+                {content.subtitleSuffix}
+              </div>
+
+              <div className="flex items-center justify-center gap-8 pb-4">
+                {reachOutLinks.map((link, index) => (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:-translate-y-1"
+                  >
+                    {link.icon}
+                  </Link>
+                ))}
+              </div>
             </motion.div>
 
             <motion.form

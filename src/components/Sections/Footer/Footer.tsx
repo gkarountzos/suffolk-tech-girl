@@ -17,26 +17,6 @@ interface IFooterProps {
   };
 }
 
-interface SocialLink {
-  href: string;
-  icon: React.ReactNode;
-}
-
-const reachOutLinks: SocialLink[] = [
-  {
-    href: "https://www.facebook.com",
-    icon: <FacebookIcon size={20} className="text-primary" />,
-  },
-  {
-    href: "mailto:info@example.com",
-    icon: <MailIcon size={20} className="text-primary" />,
-  },
-  {
-    href: "tel:+1234567890",
-    icon: <PhoneIcon size={20} className="text-primary" />,
-  },
-];
-
 export function Footer({ isInView, content, isMounted }: IFooterProps) {
   return (
     <motion.footer
@@ -50,18 +30,6 @@ export function Footer({ isInView, content, isMounted }: IFooterProps) {
           <div className="flex flex-col items-start gap-2">
             <div className="flex justify-center items-center gap-2">
               <span>{content.location}</span>
-            </div>
-            <div className="flex items-center justify-start gap-4">
-              {reachOutLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.icon}
-                </Link>
-              ))}
             </div>
           </div>
           <div>
