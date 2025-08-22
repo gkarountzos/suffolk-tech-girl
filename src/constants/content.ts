@@ -1,54 +1,53 @@
 import { words } from "@/constants/words";
 
 export const heroContent = {
-  title: "Suffolk Tech Help",
+  title: "Suffolk's Tech Girl",
   flipWords: words,
-  subtitleSuffix: "Tech Support",
+  subtitleSuffix: "Friendly Tech Support",
   description:
-    "Professional technology solutions delivered with a personal touch. We're your neighborhood experts for all things tech.",
+    "I offer straightforward tech help with a personal touch. Think of me as your friendly, local go-to for solving your digital headaches.",
   buttonText: "Reach Out",
   buttonLink: "#contact",
 };
 
 export const aboutContent = {
-  title: "Your ",
-  titleHighlight: "Trusted",
-  titleSuffix: " Tech Partners",
+  title: "Hi, I'm ",
+  titleHighlight: "Your",
+  titleSuffix: " Tech Girl!",
   paragraphs: [
-    "At Suffolk Tech Help, we believe technology should make your life easier, not harder. Our team of certified professionals brings years of experience and a genuine passion for helping our community navigate the digital world.",
-    "From simple troubleshooting to complex network setups, we approach every challenge with patience, expertise, and a commitment to finding solutions that work for you.",
+    "I believe technology should make your life easier, not more complicated. My passion is helping people in our community feel confident and comfortable in their digital world.",
+    "From a slow computer to a confusing new phone, I approach every challenge with patience and a commitment to finding a simple solution that works for you. No jargon, just friendly, effective help.",
   ],
   card: {
     imageSection: {
-      title: "Our Expert Team",
-      subtitle: "Ready to help you succeed",
+      title: "Putting the 'Personal' in PC Help",
+      subtitle: "Ready to solve your tech troubles",
     },
     featuresSection: {
-      title: "Why Choose Us?",
+      title: "Why Choose Me?",
       features: [
-        "Local Suffolk-based team",
-        "Same-day service available",
-        "Transparent, fair pricing",
-        "Ongoing support & training",
+        "Friendly, local Suffolk service",
+        "Fast response (often same-day!)",
+        "Clear, honest pricing - no surprises",
+        "Patient training & ongoing support",
       ],
     },
   },
 };
 
 export const servicesContent = {
-  title: "Our Services",
-  subtitle:
-    "Revolutionary tech support solutions designed for the modern world",
+  title: "How I Can Help",
+  subtitle: "Simple, effective solutions for your everyday tech challenges.",
   button: {
-    text: "Get Your Custom Solution",
+    text: "Let's Find Your Solution",
     href: "#contact",
   },
   services: [
     {
       icon: "Monitor",
-      title: "Computer Repair",
+      title: "Computer Repair & Tune-Ups",
       description:
-        "Hardware diagnostics, repairs, and upgrades for all major brands.",
+        "I'll diagnose and fix issues to get your computer running like new again.",
       features: [
         "Hardware diagnostics",
         "Component replacement",
@@ -57,44 +56,47 @@ export const servicesContent = {
     },
     {
       icon: "Wifi",
-      title: "Network Setup",
+      title: "Wi-Fi & Network Setup",
       description:
-        "Seamless home and office network installation and optimization.",
+        "Solving frustrating connection issues for seamless home and office internet.",
       features: [
         "WiFi optimization",
         "Router configuration",
-        "Network security",
+        "Network security checks",
       ],
     },
     {
       icon: "Smartphone",
-      title: "Mobile Support",
-      description:
-        "Expert troubleshooting and setup for smartphones and tablets.",
+      title: "Phone & Tablet Support",
+      description: "Expert troubleshooting and setup for your mobile devices.",
       features: ["Device setup", "App installation", "Data transfer"],
     },
     {
       icon: "Shield",
-      title: "Security Solutions",
+      title: "Virus & Malware Removal",
       description:
-        "Protect your digital life with robust antivirus and malware solutions.",
-      features: ["Malware removal", "Security software", "Privacy protection"],
+        "I'll help you clean and protect your devices from digital threats.",
+      features: [
+        "Malware removal",
+        "Security software advice",
+        "Privacy protection",
+      ],
     },
     {
       icon: "Cloud",
-      title: "Cloud Services",
-      description: "Secure cloud storage, migration, and backup solutions.",
-      features: ["Backup solutions", "Cloud migration", "Data sync"],
+      title: "Cloud & Backup Help",
+      description: "Guidance on secure cloud storage and backup solutions.",
+      features: ["Backup solutions", "Cloud migration help", "Data syncing"],
     },
     {
       icon: "GraduationCap",
-      title: "Tech Training",
+      title: "One-on-One Tech Training",
       description:
-        "Personalized one-on-one device and software training sessions.",
+        "Patient, personalized training sessions for your devices and software.",
       features: [
         "Personalized training",
         "Software tutorials",
-        "Best practices",
+        "Digital best practices",
       ],
     },
   ],
@@ -103,17 +105,17 @@ export const servicesContent = {
 export const contactContent = {
   title: "Get In Touch",
   flipWords: words,
-  subtitleSuffix: "tech support",
+  subtitleSuffix: "tech help",
   form: {
     nameLabel: "Your name",
     emailLabel: "Your email",
-    messageLabel: "How can we help you?",
+    messageLabel: "How can I help you?",
   },
   buttonText: "Send Message",
 };
 
 export const footerContent = {
-  location: "Serving Suffolk County & Surrounding Areas",
+  location: "Proudly serving Suffolk and its surrounding villages",
   credits: "crafted by ",
   author: {
     name: "gkarountzos",

@@ -79,7 +79,9 @@ export default function AboutClient({ content }: AboutContentProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {content.title}
-              <span className="">{content.titleHighlight}</span>
+              <span className="">
+                {content.titleHighlight} <br />{" "}
+              </span>
               {content.titleSuffix}
             </motion.h2>
 
@@ -111,11 +113,11 @@ export default function AboutClient({ content }: AboutContentProps) {
               >
                 <div className="border-2 border-primary/30 w-full h-32 lg:h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center mb-0 sm:mb-4">
                   <motion.div className="text-center">
-                    <UsersRoundIcon className="h-12 w-12 lg:h-16 lg:w-16 text-primary mx-auto mb-0 lg:mb-4" />
-                    <p className="text-lg font-semibold text-foreground">
+                    <UsersRoundIcon className="h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-primary mx-auto mb-0 lg:mb-4" />
+                    <p className="text-base sm:text-lg font-semibold text-foreground px-2">
                       {content.card.imageSection.title}
                     </p>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm sm:text-base text-muted-foreground">
                       {content.card.imageSection.subtitle}
                     </p>
                   </motion.div>
