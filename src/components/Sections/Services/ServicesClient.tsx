@@ -93,7 +93,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
               return (
                 <CarouselItem
                   key={index}
-                  className="pl-4 2xl:pl-8 basis-1/1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/3"
+                  className="pl-4 2xl:pl-8 basis-1/1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/3 select-none"
                 >
                   <div className="group h-full">
                     <div className="bg-background border-2 border-primary p-4 xl:p-6 2xl:p-8 h-full relative w-full">
