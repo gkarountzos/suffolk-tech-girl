@@ -1,7 +1,7 @@
-"use client"; // Mark as a client component because it uses framer-motion
+"use client";
 
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { FacebookIcon, MailIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 
 interface IFooterProps {
@@ -17,6 +17,26 @@ interface IFooterProps {
   };
 }
 
+interface SocialLink {
+  href: string;
+  icon: React.ReactNode;
+}
+
+const reachOutLinks: SocialLink[] = [
+  {
+    href: "https://www.facebook.com",
+    icon: <FacebookIcon size={20} className="text-primary" />,
+  },
+  {
+    href: "mailto:info@example.com",
+    icon: <MailIcon size={20} className="text-primary" />,
+  },
+  {
+    href: "tel:+1234567890",
+    icon: <PhoneIcon size={20} className="text-primary" />,
+  },
+];
+
 export function Footer({ isInView, content, isMounted }: IFooterProps) {
   return (
     <motion.footer
@@ -26,11 +46,22 @@ export function Footer({ isInView, content, isMounted }: IFooterProps) {
       transition={{ duration: 0.6, delay: 1 }}
     >
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-1 lg:gap-4 text-sm text-muted-foreground">
-          <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 lg:gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-col items-start gap-2">
             <div className="flex justify-center items-center gap-2">
-              <MapPin className="h-4 w-4" />
               <span>{content.location}</span>
+            </div>
+            <div className="flex items-center justify-start gap-4">
+              {reachOutLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.icon}
+                </Link>
+              ))}
             </div>
           </div>
           <div>

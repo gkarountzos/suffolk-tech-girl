@@ -22,18 +22,10 @@ export function ScrollToTopIndicator({
   }, [isMounted, isContactInView, hasDelayed]);
 
   const scrollToTop = () => {
-    const scrollableElement = document.querySelector(".snap-container");
-    if (scrollableElement) {
-      scrollableElement.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const scrollIndicatorVariants: Variants = {
@@ -51,7 +43,7 @@ export function ScrollToTopIndicator({
 
   return (
     <motion.div
-      className="absolute bottom-32 right-10 md:bottom-24 md:right-12 z-50"
+      className="absolute bottom-32 right-10 md:bottom-32 md:right-12 z-50"
       variants={scrollIndicatorVariants}
       initial="hidden"
       animate={

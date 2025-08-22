@@ -3,13 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import {
-  Clock,
-  MapPinIcon,
-  TimerIcon,
-  Handshake,
-  UsersRoundIcon,
-} from "lucide-react";
+import { Clock, MapPinIcon, TimerIcon, Handshake, Laptop2 } from "lucide-react";
 
 type AboutContentProps = {
   content: {
@@ -66,14 +60,14 @@ export default function AboutClient({ content }: AboutContentProps) {
       id="about"
     >
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 items-center h-full">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isMounted && isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: -50 }}
+            animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2
-              className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
+              className="text-center font-serif font-bold text-5xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -85,14 +79,13 @@ export default function AboutClient({ content }: AboutContentProps) {
               {content.titleSuffix}
             </motion.h2>
 
-            {/* Map over the paragraphs from props */}
             {content.paragraphs.map((text, index) => (
               <motion.p
                 key={index}
-                className="text-sm sm:text-md lg:text-lg text-muted-foreground pb-2 lg:pb-6 leading-relaxed"
+                className="text-sm sm:text-base lg:text-lg text-muted-foreground pb-2 lg:pb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
+                transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
               >
                 {text}
               </motion.p>
@@ -101,27 +94,25 @@ export default function AboutClient({ content }: AboutContentProps) {
 
           <motion.div
             className="relative h-full"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isMounted && isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Card className="p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-background">
+            <Card className="p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-gradient-to-br from-primary/10 via-background to-primary/10">
               <motion.div
-                className="space-y-6"
+                className="flex flex-col gap-16"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
-                <div className="border-2 border-primary/30 w-full h-32 lg:h-48 bg-gradient-to-br from-primary/10 via-background to-primary/10 flex items-center justify-center mb-0 sm:mb-4">
-                  <motion.div className="text-center">
-                    <UsersRoundIcon className="h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-primary mx-auto mb-0 lg:mb-4" />
-                    <p className="text-base sm:text-lg font-semibold text-foreground px-2">
-                      {content.card.imageSection.title}
-                    </p>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      {content.card.imageSection.subtitle}
-                    </p>
-                  </motion.div>
-                </div>
+                <motion.div className="text-center px-2 mb-0">
+                  <Laptop2 className="h-8 w-8 sm:h-12 sm:w-12 lg:h-24 lg:w-24 text-primary mx-auto mb-2 lg:mb-4" />
+                  <p className="text-base sm:text-lg font-semibold text-foreground ">
+                    {content.card.imageSection.title}
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground">
+                    {content.card.imageSection.subtitle}
+                  </p>
+                </motion.div>
 
                 <div className=" hidden sm:block">
                   <h3 className="font-serif font-semibold text-xl mb-2">

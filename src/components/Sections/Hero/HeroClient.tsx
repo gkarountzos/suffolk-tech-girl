@@ -6,8 +6,6 @@ import FancyButton from "@/components/ui/FancyButton";
 import { FlipWords } from "@/components/ui/flip-words";
 import ScrollIndicator from "@/components/CTA/ScrollIndicator";
 import { useEffect, useRef, useState } from "react";
-import AnimatedLogo from "@/components/Header/AnimatedLogo";
-import Header from "@/components/Header/Header";
 
 type HeroClientProps = {
   content: {
@@ -34,7 +32,6 @@ export default function HeroClient({ content }: HeroClientProps) {
       ref={heroRef}
       className="h-screen w-full flex items-center justify-center overflow-hidden bg-muted/10"
     >
-      <Header />
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -52,7 +49,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           </motion.h1>
 
           <motion.div
-            className="text-xl md:text-2xl text-muted-foreground pb-2 lg:pb-4 font-medium"
+            className="text-xl md:text-2xl text-muted-foreground pb-4 font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -87,7 +84,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           </motion.div>
 
           <motion.div
-            className="flex justify-center gap-8"
+            className="flex justify-center gap-8 pt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.6 }}
             transition={{ duration: 1, delay: 1 }}

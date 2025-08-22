@@ -73,14 +73,14 @@ export default function ContactClient({
   return (
     <section
       ref={ref}
-      className="h-screen w-full flex flex-col bg-muted/10"
+      className="h-screen w-full flex flex-col bg-muted/10 relative"
       id="contact"
     >
       <div className="flex-1 flex items-center justify-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <div className="flex flex-col gap-4">
             <motion.div
-              className="text-center pb-4 lg:pb-12"
+              className="text-center pb-0 lg:pb-12"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
@@ -98,7 +98,7 @@ export default function ContactClient({
 
             <motion.form
               onSubmit={handleSubmit}
-              className="backdrop-blur-sm px-8 pb-8 space-y-6"
+              className="backdrop-blur-sm pb-0 md:pb-8 space-y-4 lg:space-y-6"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}

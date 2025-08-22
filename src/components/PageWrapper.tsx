@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedLogo from "@/components/Header/AnimatedLogo";
+import Header from "@/components/Navigation/Header";
 import useLenis from "@/hooks/useLenis";
 import { ReactNode } from "react";
 
@@ -9,7 +9,7 @@ export default function PageWrapper({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <AnimatedLogo />
+      <Header />
       <main>{children}</main>
     </>
   );

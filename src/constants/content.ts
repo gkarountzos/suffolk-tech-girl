@@ -3,7 +3,7 @@ import { words } from "@/constants/words";
 export const heroContent = {
   title: "Suffolk's Tech Girl",
   flipWords: words,
-  subtitleSuffix: "Friendly Tech Support",
+  subtitleSuffix: "Tech Support",
   description:
     "I offer straightforward tech help with a personal touch. Think of me as your friendly, local go-to for solving your digital headaches.",
   buttonText: "Reach Out",
@@ -115,7 +115,7 @@ export const contactContent = {
 };
 
 export const footerContent = {
-  location: "Proudly serving Suffolk and its surrounding villages",
+  location: "Serving Suffolk and surrounding areas",
   credits: "crafted by ",
   author: {
     name: "gkarountzos",
