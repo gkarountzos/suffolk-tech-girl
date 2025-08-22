@@ -37,6 +37,7 @@ export function Footer({ isInView, content, isMounted }: IFooterProps) {
             <Link
               href={content.author.href}
               target="_blank"
+              rel="noopener noreferrer"
               className="text-primary font-bold"
             >
               {content.author.name}
