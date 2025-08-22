@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed w-full z-[70] bg-muted/20 backdrop-blur-sm border-b-2 border-primary ">
+      <header className="fixed w-full z-[70] backdrop-blur-lg border-b-2 border-primary ">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div>
