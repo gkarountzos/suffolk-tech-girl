@@ -19,48 +19,46 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.suffolktechhelp.co.uk"),
+  metadataBase: new URL("https://www.suffolktechgirl.co.uk"),
 
   title: {
-    default: "Suffolk Tech Help - Local, Friendly Tech Support",
-    template: "%s | Suffolk Tech Help",
+    default: "Suffolk's Tech Girl - Friendly, Personal Tech Support",
+    template: "%s | Suffolk's Tech Girl",
   },
 
   description:
-    "Your friendly, local experts for tech support in Suffolk. We offer computer repair, network setup, mobile support, and personalized tech training.",
+    "Your friendly, local tech girl for personal support in Suffolk. I offer computer repair, Wi-Fi help, phone support, and patient, one-on-one tech training.",
 
   keywords: [
     "tech support Suffolk",
     "IT support Ipswich",
     "computer repair Suffolk",
     "local tech help",
+    "friendly computer help",
+    "personal tech support",
+    "tech help for seniors",
+    "one-on-one tech training",
     "PC repair Bury St Edmunds",
     "laptop repair Felixstowe",
-
     "virus removal",
     "malware removal",
     "WiFi setup",
     "home network help",
-    "data backup",
-    "new computer setup",
-
     "slow computer help",
-    "internet problems",
-    "friendly tech support",
   ],
 
   openGraph: {
-    title: "Suffolk Tech Help - Local, Friendly Tech Support",
+    title: "Suffolk's Tech Girl - Friendly, Personal Tech Support",
     description:
-      "Professional technology solutions delivered with a personal touch.",
-    url: "https://www.suffolktechhelp.co.uk",
-    siteName: "Suffolk Tech Help",
+      "Friendly, one-on-one tech help for your computer, phone, and Wi-Fi troubles in Suffolk. Patient support from your local tech girl.",
+    url: "https://www.suffolktechgirl.co.uk",
+    siteName: "Suffolk's Tech Girl",
     images: [
       {
-        url: "/Logo_Gemma.webp",
+        url: "/logo.svg",
         width: 1200,
         height: 630,
-        alt: "Suffolk Tech Help logo with a friendly technician.",
+        alt: "Logo for Suffolk's Tech Girl, friendly tech support.",
       },
     ],
     locale: "en_GB",
@@ -69,9 +67,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Suffolk Tech Help - Local, Friendly Tech Support",
-    description: "Your friendly, local experts for tech support in Suffolk.",
-    images: ["/Logo_Gemma.webp"],
+    title: "Suffolk's Tech Girl - Friendly, Personal Tech Support",
+    description:
+      "Your friendly, local tech girl for personal support in Suffolk. I offer computer repair, Wi-Fi help, and patient tech training.",
+    images: ["/logo.svg"],
   },
 };
 

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.suffolktechhelp.co.uk/sitemap.xml",
+    sitemap: "https://www.suffolktechgirl.co.uk/sitemap.xml",
   };
 }
