@@ -128,19 +128,11 @@ export default function ContactClient({ content }: ContactContentProps) {
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif font-bold text-5xl text-center sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 lg:pb-6 gradient-text leading-tighter">
+              <h2 className="font-serif font-bold text-4xl text-center sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 lg:pb-6 gradient-text leading-tighter">
                 {content.title}
               </h2>
-              <div className="pb-4 lg:pb-8">
-                <FlipWords
-                  words={content.flipWords}
-                  className="text-muted-foreground p-0"
-                  duration={1500}
-                />
-                {content.subtitleSuffix}
-              </div>
 
-              <div className="flex items-center justify-center gap-8 pb-4">
+              <div className="flex flex-col items-center justify-center gap-2">
                 {reachOutLinks.map((link, index) => (
                   <Link
                     key={index}
@@ -149,7 +141,7 @@ export default function ContactClient({ content }: ContactContentProps) {
                     rel="noopener noreferrer"
                     className="transition hover:-translate-y-1"
                   >
-                    {link.icon}
+                    {link.text}
                   </Link>
                 ))}
               </div>

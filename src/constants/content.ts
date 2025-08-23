@@ -39,7 +39,7 @@ export const servicesContent = {
   title: "How I Can Help",
   subtitle: "Simple, effective solutions for your everyday tech challenges.",
   button: {
-    text: "Let's Find Your Solution",
+    text: "Let me Help you",
     href: "#contact",
   },
 };
@@ -141,6 +141,6 @@ export const footerContent = {
   credits: "crafted by ",
   author: {
     name: "gkarountzos",
-    href: "https://github.com/gkarountzos",
+    href: "mailto:karountzos.geo@gmail.com",
   },
 };

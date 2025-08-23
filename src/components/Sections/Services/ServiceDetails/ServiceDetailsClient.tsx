@@ -14,6 +14,7 @@ import {
   LucideProps,
 } from "lucide-react";
 import { Services } from "@/constants/content";
+import { Footer } from "@/components/Sections/Footer/Footer";
 
 const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,
@@ -31,16 +32,16 @@ interface ServicePageProps {
 export function ServiceDetailsContent({ service }: ServicePageProps) {
   const IconComponent = iconMap[service.icon];
   return (
-    <section className="min-h-screen w-full flex flex-col justify-center bg-muted/10 py-24">
+    <section className="h-screen w-full flex flex-col justify-center bg-muted/10 pt-16 relative">
       <div className="container mx-auto max-w-4xl px-8 z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8 w-fit"
+          className="mb-4 sm:mb-8 w-fit"
         >
           <Link href="/#services" className="group ">
-            <div className="relative font-serif font-bold text-sm md:text-xl lg:text-2xl hidden md:block">
+            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
               Back to All Services
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
@@ -51,9 +52,9 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="p-8 md:p-12 shadow-lg border-2 border-primary bg-muted/10"
+          className="p-4 sm:p-8 md:p-12 shadow-lg border-2 border-primary bg-muted/10"
         >
-          <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-6 mb-6">
+          <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-6 mb-2 sm:mb-6">
             {IconComponent && (
               <div className="flex-shrink-0">
                 <IconComponent className="h-12 w-12 text-primary" />
@@ -64,19 +65,21 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
             </h1>
           </div>
 
-          <p className="md:text-lg lg:text-xl text-center md:text-left text-foreground/70 mb-8 leading-relaxed">
+          <p className="text-sm md:text-lg lg:text-xl text-center md:text-left text-foreground/70 mb-4 sm:mb-8 leading-relaxed">
             {service.description}
           </p>
 
-          <div className="border-t border-primary/20 pt-6">
+          <div className="border-t border-primary/20 pt-4 sm:pt-6">
             <h3 className="font-serif font-bold sm:text-xl md:text-2xl text-card-foreground mb-4">
               What&apos;s Included:
             </h3>
             <ul className="space-y-3">
               {service.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
+                <li key={index} className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-foreground/80">{feature}</span>
+                  <span className="text-foreground/80 text-sm sm:text-base">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>

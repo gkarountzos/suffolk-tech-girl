@@ -1,21 +1,19 @@
-import { FacebookIcon, MailIcon, PhoneIcon } from "lucide-react";
-
 interface SocialLink {
   href: string;
-  icon: React.ReactNode;
+  text: string;
 }
 
 export const reachOutLinks: SocialLink[] = [
   {
     href: "https://www.facebook.com",
-    icon: <FacebookIcon size={20} className="text-primary" />,
+    text: "Facebook",
   },
   {
     href: "mailto:info@example.com",
-    icon: <MailIcon size={20} className="text-primary" />,
+    text: "info@example.com",
   },
   {
     href: "tel:+1234567890",
-    icon: <PhoneIcon size={20} className="text-primary" />,
+    text: "1234567890",
   },
 ];

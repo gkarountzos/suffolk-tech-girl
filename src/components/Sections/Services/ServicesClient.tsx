@@ -89,7 +89,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                   <div key={index}>
                     <Link href={`/services/${slugify(service.title)}`}>
                       <motion.div
-                        className="group flex items-center justify-between border-t-2 border-primary p-2 sm:p-4 xl:p-6 2xl:p-8 h-full w-full  select-none cursor-pointer"
+                        className="group flex items-center justify-between border-t-2 border-primary p-3 sm:p-4 xl:p-6 2xl:p-8 h-full w-full  select-none cursor-pointer"
                         whileHover="hover"
                       >
                         <div className="flex items-center justify-start gap-4">
