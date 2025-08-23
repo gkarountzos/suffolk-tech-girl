@@ -47,7 +47,7 @@ type ServicesContentProps = {
 
 export default function ServicesClient({ content }: ServicesContentProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -63,26 +63,36 @@ export default function ServicesClient({ content }: ServicesContentProps) {
       <div className="container mx-auto max-w-7xl px-8 lg:px-16 z-10 pt-16">
         <motion.div
           className="text-center mb-4 xl:mb-8 2xl:mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.h2 className="font-serif font-bold text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="font-serif font-bold text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter"
+          >
             {content.title}
           </motion.h2>
-          <p className="md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            className="md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             {content.subtitle}
-          </p>
+          </motion.p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             plugins={[
@@ -91,7 +101,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                 stopOnInteraction: false,
               }),
             ]}
-            className="w-full mb-12 border-l-2 border-r-2 border-primary"
+            className="w-full mb-12 border-l-2 border-r-2 border-primary py-12"
           >
             <CarouselContent className="-ml-4 2xl:-ml-8">
               {content.services.map((service, index) => {
@@ -99,7 +109,7 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                 return (
                   <CarouselItem
                     key={index}
-                    className="pl-4 2xl:pl-8 basis-1/1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/3 select-none"
+                    className=" basis-1/1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/3 select-none"
                   >
                     <div className="group h-full">
                       <div className="bg-background border-2 border-primary p-4 xl:p-6 2xl:p-8 h-full relative w-full">
@@ -138,9 +148,9 @@ export default function ServicesClient({ content }: ServicesContentProps) {
 
         <motion.div
           className="flex items-center justify-center mt-0 lg:mt-8 xl:mt-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <FancyButton href={content.button.href}>
             {content.button.text}

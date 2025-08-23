@@ -56,7 +56,7 @@ export default function AboutClient({ content }: AboutContentProps) {
   return (
     <section
       ref={ref}
-      className="h-screen w-full flex items-center bg-muted/10 py-12"
+      className="h-screen w-full flex items-center bg-muted/20 py-12"
       id="about"
     >
       <div className="container mx-auto max-w-7xl px-8 lg:px-16 pt-16">

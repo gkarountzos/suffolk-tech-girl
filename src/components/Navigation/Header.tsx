@@ -95,9 +95,10 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-4 lg:pb-6 gradient-text leading-tight"
+                className="relative group font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-4 lg:pb-6 gradient-text leading-tight"
               >
                 {link.label}
+                <span className="absolute bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
               </Link>
             ))}
           </nav>
