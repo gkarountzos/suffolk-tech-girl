@@ -14,7 +14,6 @@ import {
   LucideProps,
 } from "lucide-react";
 import { Services } from "@/constants/content";
-import { Footer } from "@/components/Sections/Footer/Footer";
 
 const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,
@@ -71,7 +70,7 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
 
           <div className="border-t border-primary/20 pt-6">
             <h3 className="font-serif font-bold sm:text-xl md:text-2xl text-card-foreground mb-4">
-              What's Included:
+              What&apos;s Included:
             </h3>
             <ul className="space-y-3">
               {service.features.map((feature, index) => (

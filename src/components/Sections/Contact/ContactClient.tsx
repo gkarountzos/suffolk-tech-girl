@@ -43,10 +43,7 @@ type ContactContentProps = {
   };
 };
 
-export default function ContactClient({
-  content,
-  footerContent,
-}: ContactContentProps) {
+export default function ContactClient({ content }: ContactContentProps) {
   const ref = useRef(null);
   const isContactInView = useInView(ref, { amount: 0.5 });
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -210,11 +207,7 @@ export default function ContactClient({
         isContactInView={isContactInView}
         isMounted={isMounted}
       />
-      <Footer
-        isInView={isInView}
-        isMounted={isMounted}
-        content={footerContent}
-      />
+      <Footer isInView={isInView} isMounted={isMounted} />
     </section>
   );
 }
