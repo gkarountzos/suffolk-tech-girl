@@ -10,14 +10,18 @@ import {
   GraduationCap,
   Cloud,
   LucideProps,
+  ArrowRightIcon,
 } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+import { services, servicesContent } from "@/constants/content";
+
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/ & /g, "-and-")
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
 
 const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,
@@ -29,20 +33,7 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
 };
 
 type ServicesContentProps = {
-  content: {
-    title: string;
-    subtitle: string;
-    button: {
-      text: string;
-      href: string;
-    };
-    services: {
-      icon: string;
-      title: string;
-      description: string;
-      features: string[];
-    }[];
-  };
+  content: typeof servicesContent;
 };
 
 export default function ServicesClient({ content }: ServicesContentProps) {
@@ -71,12 +62,12 @@ export default function ServicesClient({ content }: ServicesContentProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-serif font-bold text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter"
+            className="font-serif font-bold text-4xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-8xl pb-2 2xl:pb-6 gradient-text leading-tighter"
           >
             {content.title}
           </motion.h2>
           <motion.p
-            className="md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -90,60 +81,39 @@ export default function ServicesClient({ content }: ServicesContentProps) {
           animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            plugins={[
-              Autoplay({
-                delay: 2500,
-                stopOnInteraction: false,
-              }),
-            ]}
-            className="w-full mb-12 border-l-2 border-r-2 border-primary py-12"
-          >
-            <CarouselContent className="-ml-4 2xl:-ml-8">
-              {content.services.map((service, index) => {
+          <div className="w-full mb-12 ">
+            <motion.div className="flex flex-col border-b-2 border-primary">
+              {services.map((service, index) => {
                 const IconComponent = iconMap[service.icon];
                 return (
-                  <CarouselItem
-                    key={index}
-                    className=" basis-1/1 sm:basis-1/2 lg:basis-1/3 xl:basis-1/3 select-none"
-                  >
-                    <div className="group h-full">
-                      <div className="bg-background border-2 border-primary p-4 xl:p-6 2xl:p-8 h-full relative w-full">
-                        <div className="flex items-center justify-start gap-4 pb-0 lg:pb-4">
+                  <div key={index}>
+                    <Link href={`/services/${slugify(service.title)}`}>
+                      <motion.div
+                        className="group flex items-center justify-between border-t-2 border-primary p-2 sm:p-4 xl:p-6 2xl:p-8 h-full w-full  select-none cursor-pointer"
+                        whileHover="hover"
+                      >
+                        <div className="flex items-center justify-start gap-4">
                           {IconComponent && (
                             <IconComponent className="h-6 w-6 lg:h-8 lg:w-8 text-primary" />
                           )}
-                          <h3 className="font-serif font-bold text-base md:text-lg lg:text-xl xl:text-3xl text-card-foreground group-hover:text-primary transition-colors duration-300">
+                          <h3 className="font-serif font-bold text-base md:text-lg lg:text-xl xl:text-3xl text-primary group-hover:text-primary transition-colors duration-300">
                             {service.title}
                           </h3>
                         </div>
-                        <p className="text-muted-foreground pb-0 lg:pb-6 leading-relaxed text-sm lg:text-base xl:text-lg">
-                          {service.description}
-                        </p>
-                        <ul className="space-y-3 mb-8">
-                          {service.features.map((feature, featureIndex) => (
-                            <li
-                              key={featureIndex}
-                              className="flex items-center gap-3 text-card-foreground"
-                            >
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-sm font-medium">
-                                {feature}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CarouselItem>
+                        <motion.div className="relative font-serif font-bold text-sm md:text-md lg:text-lg xl:text-2xl hidden md:block">
+                          Learn More
+                          <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                        </motion.div>
+                        <div className="block md:hidden">
+                          <ArrowRightIcon className="h-4 w-4 mx-2 text-primary " />
+                        </div>
+                      </motion.div>
+                    </Link>
+                  </div>
                 );
               })}
-            </CarouselContent>
-          </Carousel>
+            </motion.div>
+          </div>
         </motion.div>
 
         <motion.div

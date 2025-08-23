@@ -42,65 +42,87 @@ export const servicesContent = {
     text: "Let's Find Your Solution",
     href: "#contact",
   },
-  services: [
-    {
-      icon: "Monitor",
-      title: "Computer Repair & Tune-Ups",
-      description:
-        "I'll diagnose and fix issues to get your computer running like new again.",
-      features: [
-        "Hardware diagnostics",
-        "Component replacement",
-        "Performance optimization",
-      ],
-    },
-    {
-      icon: "Wifi",
-      title: "Wi-Fi & Network Setup",
-      description:
-        "Solving frustrating connection issues for seamless home and office internet.",
-      features: [
-        "WiFi optimization",
-        "Router configuration",
-        "Network security checks",
-      ],
-    },
-    {
-      icon: "Smartphone",
-      title: "Phone & Tablet Support",
-      description: "Expert troubleshooting and setup for your mobile devices.",
-      features: ["Device setup", "App installation", "Data transfer"],
-    },
-    {
-      icon: "Shield",
-      title: "Virus & Malware Removal",
-      description:
-        "I'll help you clean and protect your devices from digital threats.",
-      features: [
-        "Malware removal",
-        "Security software advice",
-        "Privacy protection",
-      ],
-    },
-    {
-      icon: "Cloud",
-      title: "Cloud & Backup Help",
-      description: "Guidance on secure cloud storage and backup solutions.",
-      features: ["Backup solutions", "Cloud migration help", "Data syncing"],
-    },
-    {
-      icon: "GraduationCap",
-      title: "One-on-One Tech Training",
-      description:
-        "Patient, personalized training sessions for your devices and software.",
-      features: [
-        "Personalized training",
-        "Software tutorials",
-        "Digital best practices",
-      ],
-    },
-  ],
 };
+
+export interface Services {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+  keywords: string[];
+  href: string;
+}
+
+export const services: Services[] = [
+  {
+    icon: "Monitor",
+    title: "Computer Build & Repair",
+    description:
+      "I'll diagnose and fix issues to get your computer running like new again.",
+    features: [
+      "Hardware diagnostics",
+      "Component replacement",
+      "Performance optimization",
+    ],
+    keywords: ["computer repair", "hardware", "performance"],
+    href: "/services/computer-build-repair",
+  },
+  {
+    icon: "Wifi",
+    title: "Wi-Fi & Network Setup",
+    description:
+      "Solving frustrating connection issues for seamless home and office internet.",
+    features: [
+      "WiFi optimization",
+      "Router configuration",
+      "Network security checks",
+    ],
+    keywords: ["wifi", "network", "internet"],
+    href: "/services/wi-fi-network-setup",
+  },
+  {
+    icon: "Smartphone",
+    title: "Phone & Tablet Support",
+    description: "Expert troubleshooting and setup for your mobile devices.",
+    features: ["Device setup", "App installation", "Data transfer"],
+    keywords: ["phone support", "tablet support", "mobile devices"],
+    href: "/services/phone-tablet-support",
+  },
+  {
+    icon: "Shield",
+    title: "Virus & Malware Removal",
+    description:
+      "I'll help you clean and protect your devices from digital threats.",
+    features: [
+      "Malware removal",
+      "Security software advice",
+      "Privacy protection",
+    ],
+    keywords: ["virus removal", "malware", "security"],
+    href: "/services/virus-malware-removal",
+  },
+  {
+    icon: "Cloud",
+    title: "Cloud & Backup Help",
+    description: "Guidance on secure cloud storage and backup solutions.",
+    features: ["Backup solutions", "Cloud migration help", "Data syncing"],
+    keywords: ["cloud", "backup", "data"],
+    href: "/services/cloud-backup-help",
+  },
+  {
+    icon: "GraduationCap",
+    title: "One-on-One Tech Training",
+    description:
+      "Patient, personalized training sessions for your devices and software.",
+    features: [
+      "Personalized training",
+      "Software tutorials",
+      "Digital best practices",
+    ],
+    keywords: ["tech training", "personalized support", "software tutorials"],
+    href: "/services/one-on-one-tech-training",
+  },
+];
 
 export const contactContent = {
   title: "Get In Touch",

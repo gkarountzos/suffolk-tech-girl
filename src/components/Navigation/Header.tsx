@@ -46,10 +46,10 @@ const Navbar = () => {
               <CogIcon className="h-8 w-8 md:h-12 md:w-12 animate-[spin_20s_linear_infinite]" />
             </div>
 
-            <div className="">
+            <div className="pl-2">
               <label
                 htmlFor="burger-checkbox"
-                className="relative w-[30px] h-[20px] md:w-[40px] md:h-[30px] cursor-pointer block"
+                className="relative w-[30px] h-[20px] md:w-[40px] md:h-[30px] cursor-pointer block "
               >
                 <input
                   type="checkbox"
@@ -84,7 +84,7 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`fixed inset-0 z-[60] bg-background/10  backdrop-blur-lg transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[60] bg-background/10  backdrop-blur-lg transition-opacity duration-300 ease-in-out pt-16 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >

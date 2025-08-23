@@ -98,32 +98,34 @@ export default function AboutClient({ content }: AboutContentProps) {
             animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Card className="p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-gradient-to-br from-primary/10 via-background to-primary/10">
+            <Card className="flex justify-center p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-muted/10">
               <motion.div
-                className="flex flex-col gap-16"
+                className="flex flex-col gap-8 lg:gap-16"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
-                <motion.div className="text-center px-2 mb-0">
-                  <Laptop2 className="h-8 w-8 sm:h-12 sm:w-12 lg:h-24 lg:w-24 text-primary mx-auto mb-2 lg:mb-4" />
-                  <p className="text-base sm:text-lg font-semibold text-foreground ">
-                    {content.card.imageSection.title}
-                  </p>
-                  <p className="text-sm sm:text-base text-muted-foreground">
-                    {content.card.imageSection.subtitle}
-                  </p>
+                <motion.div className="flex  lg:justify-around items-center px-2 mb-0">
+                  <Laptop2 className="h-8 w-8 sm:h-12 sm:w-12 lg:h-24 lg:w-24 text-primary " />
+                  <div className="pl-2">
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-foreground  ">
+                      {content.card.imageSection.title}
+                    </p>
+                    <p className="text-sm sm:text-base text-muted-foreground">
+                      {content.card.imageSection.subtitle}
+                    </p>
+                  </div>
                 </motion.div>
 
                 <div className=" hidden sm:block">
-                  <h3 className="font-serif font-semibold text-xl mb-2">
+                  <h3 className="font-serif font-semibold text-xl mb-4">
                     {content.card.featuresSection.title}
                   </h3>
-                  <div className="grid grid-cols-2 gap-y-2 text-left text-muted-foreground">
+                  <div className="flex flex-col gap-2 text-left text-muted-foreground">
                     {/* Map over the combined features array */}
                     {features.map((feature, index) => (
-                      <div key={index} className="flex items-center">
-                        {feature.icon}
-                        <p className="text-sm sm:text-base 2xl:text-lg">
+                      <div key={index} className="flex gap-2">
+                        <div>{feature.icon}</div>
+                        <p className="text-sm sm:text-base 2xl:text-lg ">
                           {feature.text}
                         </p>
                       </div>

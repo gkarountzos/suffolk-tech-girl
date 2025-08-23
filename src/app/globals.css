@@ -164,7 +164,7 @@ html.lenis {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+  scroll-behavior: smooth !important;
 }
 
 .lenis.lenis-stopped {
