@@ -10,7 +10,6 @@ import {
 import { Send } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
 import { Footer } from "@/components/Sections/Footer/Footer";
-import { FlipWords } from "@/components/ui/flip-words";
 import { ScrollToTopIndicator } from "@/components/CTA/ScrollToTopIndicator";
 import Link from "next/link";
 import { reachOutLinks } from "@/constants/contactLinks";
