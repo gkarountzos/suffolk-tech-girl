@@ -1,18 +1,20 @@
 "use client";
 
 import Logo from "@/components/Navigation/Logo";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { CogIcon } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { href: "#", label: "Home" },
+  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
+  const { scrollTo } = useSmoothScroll();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -29,6 +31,15 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetHref: string
+  ) => {
+    e.preventDefault();
+    setIsOpen(false);
+    scrollTo(targetHref);
   };
 
   return (
@@ -94,7 +105,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleLinkClick(e, link.href)}
                 className="relative group font-serif font-black text-5xl md:text-7xl lg:text-8xl pb-2 md:pb-4 lg:pb-6 gradient-text leading-tight"
               >
                 {link.label}

@@ -14,7 +14,6 @@ import {
   LucideProps,
 } from "lucide-react";
 import { Services } from "@/constants/content";
-import { Footer } from "@/components/Sections/Footer/Footer";
 
 const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,

@@ -31,6 +31,7 @@ export default function HeroClient({ content }: HeroClientProps) {
     <section
       ref={heroRef}
       className="h-screen w-full flex items-center justify-center overflow-hidden bg-muted/10"
+      id="home"
     >
       <div className="container mx-auto px-6 text-center relative z-10 pt-16">
         <motion.div
