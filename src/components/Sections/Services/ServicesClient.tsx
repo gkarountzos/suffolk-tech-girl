@@ -89,18 +89,18 @@ export default function ServicesClient({ content }: ServicesContentProps) {
                   <div key={index}>
                     <Link href={`/services/${slugify(service.title)}`}>
                       <motion.div
-                        className="group flex items-center justify-between border-t-2 border-primary p-3 sm:p-4 xl:p-6 2xl:p-8 h-full w-full  select-none cursor-pointer"
+                        className="group flex items-center justify-between border-t-2 border-primary p-3 sm:p-4 xl:p-6 h-full w-full  select-none cursor-pointer"
                         whileHover="hover"
                       >
                         <div className="flex items-center justify-start gap-4">
                           {IconComponent && (
                             <IconComponent className="h-6 w-6 lg:h-8 lg:w-8 text-primary" />
                           )}
-                          <h3 className="font-serif font-bold text-base md:text-lg lg:text-xl xl:text-3xl text-primary group-hover:text-primary transition-colors duration-300">
+                          <h3 className="font-serif font-bold text-base md:text-lg lg:text-xl xl:text-2xl text-primary group-hover:text-primary transition-colors duration-300">
                             {service.title}
                           </h3>
                         </div>
-                        <motion.div className="relative font-serif font-bold text-sm md:text-md lg:text-lg xl:text-2xl hidden md:block">
+                        <motion.div className="relative font-serif font-bold text-sm md:text-md lg:text-lg xl:text-xl hidden md:block">
                           Learn More
                           <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
                         </motion.div>
