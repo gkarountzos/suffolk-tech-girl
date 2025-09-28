@@ -41,20 +41,20 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           transition={{ duration: 0.8 }}
           className="mb-4 sm:mb-8 flex justify-between w-full"
         >
-          <Link href="/#services" className="group flex items-center">
-            <ArrowLeftIcon className="h-6 w-6 text-primary mr-2" />
+          <Link href="/#services" className="group ">
+            {/* <ArrowLeftIcon className="h-6 w-6 text-primary mr-2" /> */}
             <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
               Back to All Services
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
           </Link>
-          <Link href="/#services" className="group flex items-center gap-2">
+          {/* <Link href="/#services" className="group flex items-center gap-2">
             <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
               Next Service
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
             <ArrowRightIcon className="h-6 w-6 text-primary mr-2" />
-          </Link>
+          </Link> */}
         </motion.div>
 
         <motion.div

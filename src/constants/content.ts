@@ -199,7 +199,7 @@ export const contactContent = {
 };
 
 export const footerContent = {
-  location: "Serving Suffolk and surrounding areas",
+  location: "Serving Mid Suffolk and surrounding areas",
   credits: "crafted by ",
   author: {
     name: "gkarountzos",
