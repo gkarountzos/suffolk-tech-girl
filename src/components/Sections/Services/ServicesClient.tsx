@@ -67,12 +67,21 @@ export default function ServicesClient({ content }: ServicesContentProps) {
             {content.title}
           </motion.h2>
           <motion.p
-            className="text-sm md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm md:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed pb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {content.subtitle}
+          </motion.p>
+
+          <motion.p className="border-2 border-primary rounded-none shadow-none bg-muted/10 p-4 w-3/5 mx-auto">
+            <span className="font-bold">
+              Support for Windows 10 ends on 14th October 2025.
+            </span>
+            <br /> Continuing to use Windows 10 past this date will leave your
+            device open to viruses. <br />
+            <span className="font-bold">I can help.</span>
           </motion.p>
         </motion.div>
 

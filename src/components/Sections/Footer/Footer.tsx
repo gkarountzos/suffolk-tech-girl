@@ -2,6 +2,7 @@
 
 import { footerContent } from "@/constants/content";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import Link from "next/link";
 
 interface IFooterProps {
@@ -19,8 +20,9 @@ export function Footer({ isInView, isMounted }: IFooterProps) {
     >
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 lg:gap-4 text-sm text-muted-foreground">
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col justify-center items-start gap-2">
             <div className="flex justify-center items-center gap-2">
+              <MapPin className="inline h-4 w-4 text-primary" />
               <span>{footerContent.location}</span>
             </div>
           </div>

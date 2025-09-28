@@ -106,14 +106,6 @@ export default function AboutClient({ content }: AboutContentProps) {
               >
                 <motion.div className="flex  lg:justify-around items-center px-2 mb-0">
                   <Laptop2 className="h-8 w-8 sm:h-12 sm:w-12 lg:h-24 lg:w-24 text-primary " />
-                  <div className="pl-2">
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-foreground  ">
-                      {content.card.imageSection.title}
-                    </p>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      {content.card.imageSection.subtitle}
-                    </p>
-                  </div>
                 </motion.div>
 
                 <div className=" hidden sm:block">

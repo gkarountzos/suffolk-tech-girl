@@ -70,7 +70,7 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
 
           <div className="border-t border-primary/20 pt-4 sm:pt-6">
             <h3 className="font-serif font-bold sm:text-xl md:text-2xl text-card-foreground mb-4">
-              What&apos;s Included:
+              How I can help:
             </h3>
             <ul className="space-y-3">
               {service.features.map((feature, index) => (
@@ -85,11 +85,17 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           </div>
         </motion.div>
 
+        <motion.div>
+          <h2 className="font-serif font-bold text-xl  gradient-text leading-tighter py-8 text-center">
+            Don't see your problem listed? I might still be able to help.
+          </h2>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center justify-center mt-12"
+          className="flex items-center justify-center"
         >
           <FancyButton href="/#contact">Get In Touch</FancyButton>
         </motion.div>

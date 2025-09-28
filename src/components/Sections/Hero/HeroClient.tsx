@@ -63,7 +63,6 @@ export default function HeroClient({ content }: HeroClientProps) {
             {content.subtitleSuffix}
           </motion.div>
 
-          {/* Use the description from props */}
           <motion.p
             className="text-base md:text-xl text-foreground/80 pb-6 lg:pb-12 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
@@ -87,7 +86,7 @@ export default function HeroClient({ content }: HeroClientProps) {
           <motion.div
             className="flex justify-center gap-8 pt-12"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
+            animate={{ opacity: 0.3 }}
             transition={{ duration: 1, delay: 1 }}
           >
             <motion.div

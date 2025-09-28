@@ -1,4 +1,3 @@
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import Link from "next/link";
 
 interface IFancyButtonProps {
@@ -14,16 +13,6 @@ const FancyButton = ({
   className,
   type = "button",
 }: IFancyButtonProps) => {
-  const { scrollTo } = useSmoothScroll();
-
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetHref: string
-  ) => {
-    e.preventDefault();
-    scrollTo(targetHref);
-  };
-
   const commonClassNames = `
     group 
     relative 
@@ -142,11 +131,7 @@ const FancyButton = ({
 
   if (href) {
     return (
-      <Link
-        href={href}
-        onClick={(e) => handleLinkClick(e, href)}
-        className={commonClassNames}
-      >
+      <Link href={href} className={commonClassNames}>
         {innerContent}
       </Link>
     );
