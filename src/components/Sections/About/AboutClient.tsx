@@ -120,7 +120,7 @@ export default function AboutClient({ content }: AboutContentProps) {
                 </h3>
                 <div className="flex flex-col gap-2 text-left text-muted-foreground">
                   {features.map((feature, index) => (
-                    <div key={index} className="flex gap-2">
+                    <div key={index} className="flex gap-2 items-center">
                       <div>{feature.icon}</div>
                       <p className="text-sm sm:text-base 2xl:text-lg ">
                         {feature.text}
