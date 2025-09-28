@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../public/home.png";
+import logo from "../../../public/home.svg";
 
 export default function Logo() {
   return (
@@ -9,7 +9,7 @@ export default function Logo() {
         alt="Suffolk's Tech Girl Logo"
         width={300}
         height={207}
-        className="h-16 w-16 md:h-12 md:w-16 aspect-auto object-contain"
+        className="h-12 w-12 aspect-auto object-contain "
         priority
         quality={100}
       />

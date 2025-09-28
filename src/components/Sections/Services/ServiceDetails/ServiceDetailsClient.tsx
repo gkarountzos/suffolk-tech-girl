@@ -7,11 +7,13 @@ import {
   Monitor,
   Smartphone,
   Wifi,
-  Shield,
+  Gamepad2,
   GraduationCap,
-  Cloud,
   CheckCircle,
   LucideProps,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  Keyboard,
 } from "lucide-react";
 import { Services } from "@/constants/content";
 
@@ -19,9 +21,9 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,
   Smartphone,
   Wifi,
-  Shield,
+  Gamepad2,
   GraduationCap,
-  Cloud,
+  Keyboard,
 };
 
 interface ServicePageProps {
@@ -37,13 +39,21 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-4 sm:mb-8 w-fit"
+          className="mb-4 sm:mb-8 flex justify-between w-full"
         >
-          <Link href="/#services" className="group ">
+          <Link href="/#services" className="group flex items-center">
+            <ArrowLeftIcon className="h-6 w-6 text-primary mr-2" />
             <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
               Back to All Services
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
+          </Link>
+          <Link href="/#services" className="group flex items-center gap-2">
+            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
+              Next Service
+              <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+            </div>
+            <ArrowRightIcon className="h-6 w-6 text-primary mr-2" />
           </Link>
         </motion.div>
 

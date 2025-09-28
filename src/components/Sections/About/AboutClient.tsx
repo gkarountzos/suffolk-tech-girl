@@ -3,7 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Clock, MapPinIcon, TimerIcon, Handshake, Laptop2 } from "lucide-react";
+import {
+  Clock,
+  MapPinIcon,
+  TimerIcon,
+  Handshake,
+  Car,
+  GraduationCap,
+} from "lucide-react";
 
 type AboutContentProps = {
   content: {
@@ -44,8 +51,16 @@ export default function AboutClient({ content }: AboutContentProps) {
       text: content.card.featuresSection.features[2],
     },
     {
-      icon: <Clock className="inline h-4 w-4 mr-1" />,
+      icon: <GraduationCap className="inline h-4 w-4 mr-1" />,
       text: content.card.featuresSection.features[3],
+    },
+    {
+      icon: <Car className="inline h-4 w-4 mr-1" />,
+      text: content.card.featuresSection.features[4],
+    },
+    {
+      icon: <Clock className="inline h-4 w-4 mr-1" />,
+      text: content.card.featuresSection.features[5],
     },
   ];
 
@@ -63,7 +78,7 @@ export default function AboutClient({ content }: AboutContentProps) {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2
-              className="text-center font-serif font-bold text-5xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
+              className="font-serif font-bold text-5xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -96,29 +111,22 @@ export default function AboutClient({ content }: AboutContentProps) {
           >
             <Card className="flex justify-center p-6 lg:p-8 w-full hover-lift h-full border-2 border-primary rounded-none shadow-none bg-muted/10">
               <motion.div
-                className="flex flex-col gap-8 lg:gap-16"
+                className="flex flex-col gap-4 lg:gap-8"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
-                <motion.div className="flex  lg:justify-around items-center px-2 mb-0">
-                  <Laptop2 className="h-8 w-8 sm:h-12 sm:w-12 lg:h-24 lg:w-24 text-primary " />
-                </motion.div>
-
-                <div className=" hidden sm:block">
-                  <h3 className="font-serif font-semibold text-xl mb-4">
-                    {content.card.featuresSection.title}
-                  </h3>
-                  <div className="flex flex-col gap-2 text-left text-muted-foreground">
-                    {/* Map over the combined features array */}
-                    {features.map((feature, index) => (
-                      <div key={index} className="flex gap-2">
-                        <div>{feature.icon}</div>
-                        <p className="text-sm sm:text-base 2xl:text-lg ">
-                          {feature.text}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                <h3 className="font-serif font-semibold text-xl">
+                  {content.card.featuresSection.title}
+                </h3>
+                <div className="flex flex-col gap-2 text-left text-muted-foreground">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex gap-2">
+                      <div>{feature.icon}</div>
+                      <p className="text-sm sm:text-base 2xl:text-lg ">
+                        {feature.text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             </Card>

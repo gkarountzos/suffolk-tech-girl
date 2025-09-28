@@ -5,6 +5,7 @@ import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "sonner";
+import { SupportAlert } from "@/components/Alert";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -92,6 +93,7 @@ export default function RootLayout({
               "border-2 border-primary bg-background flex gap-2 font-sans font-medium p-4",
           }}
         />
+        <SupportAlert />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>

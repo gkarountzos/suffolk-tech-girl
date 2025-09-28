@@ -24,7 +24,7 @@ export const aboutContent = {
       features: [
         "Friendly, local Suffolk service",
         "Fast response (I aim for same-day)",
-        "1-on-1 digital literacy classes",
+        "1-to-1 digital literacy classes",
         "Over a decade of experience",
         "Home visits or remote support, whatever suits you",
         "Wide availability - I work beyond 9-5",
@@ -122,7 +122,7 @@ export const services: Services[] = [
   },
   {
     icon: "GraduationCap",
-    title: "1-on-1 Digital Literacy Classes",
+    title: "1-to-1 Digital Literacy Classes",
     description: "Learn the skills you need to feel confident with technology.",
     features: [
       "How to use email, apps, and the internet with confidence",
@@ -143,7 +143,7 @@ export const services: Services[] = [
     href: "/services/digital-literacy-classes",
   },
   {
-    icon: "Cloud",
+    icon: "Keyboard",
     title: "Custom PC Builds",
     description: "A computer designed and built around your needs.",
     features: [
@@ -164,7 +164,7 @@ export const services: Services[] = [
     href: "/services/custom-pc-builds",
   },
   {
-    icon: "Shield",
+    icon: "Gamepad2",
     title: "Gaming Support",
     description:
       "Help setting up and enjoying your games the way they’re meant to be played.",

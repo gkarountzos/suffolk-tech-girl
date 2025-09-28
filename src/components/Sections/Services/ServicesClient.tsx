@@ -6,11 +6,11 @@ import {
   Monitor,
   Smartphone,
   Wifi,
-  Shield,
   GraduationCap,
-  Cloud,
+  Keyboard,
   LucideProps,
   ArrowRightIcon,
+  Gamepad2,
 } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
 import Link from "next/link";
@@ -27,9 +27,9 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Monitor,
   Smartphone,
   Wifi,
-  Shield,
+  Gamepad2,
   GraduationCap,
-  Cloud,
+  Keyboard,
 };
 
 type ServicesContentProps = {
@@ -73,15 +73,6 @@ export default function ServicesClient({ content }: ServicesContentProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {content.subtitle}
-          </motion.p>
-
-          <motion.p className="border-2 border-primary rounded-none shadow-none bg-muted/10 p-4 w-3/5 mx-auto">
-            <span className="font-bold">
-              Support for Windows 10 ends on 14th October 2025.
-            </span>
-            <br /> Continuing to use Windows 10 past this date will leave your
-            device open to viruses. <br />
-            <span className="font-bold">I can help.</span>
           </motion.p>
         </motion.div>
 
