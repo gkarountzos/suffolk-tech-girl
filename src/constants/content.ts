@@ -118,7 +118,7 @@ export const services: Services[] = [
       "budget",
       "data safety",
     ],
-    href: "/services/advice-recommendations",
+    href: "/services/advice-and-recommendations",
   },
   {
     icon: "GraduationCap",
@@ -140,7 +140,7 @@ export const services: Services[] = [
       "online banking",
       "file management",
     ],
-    href: "/services/digital-literacy-classes",
+    href: "/services/1-to-1-digital-literacy-classes",
   },
   {
     icon: "Keyboard",

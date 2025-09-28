@@ -11,7 +11,7 @@ export function SupportAlert() {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="fixed bottom-8 left-8 z-50 flex items-center"
+      className="fixed bottom-8 left-8 z-50 flex items-center "
     >
       <motion.div
         animate={isHovered ? { y: 0 } : { y: [0, -8, 0] }}
@@ -20,7 +20,7 @@ export function SupportAlert() {
           repeat: isHovered ? 0 : Infinity,
           ease: "easeInOut",
         }}
-        className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-primary shadow-lg"
+        className="flex h-14 w-14  items-center justify-center rounded-full bg-primary shadow-lg"
       >
         <AlertCircleIcon className="h-8 w-8 text-background" />
       </motion.div>

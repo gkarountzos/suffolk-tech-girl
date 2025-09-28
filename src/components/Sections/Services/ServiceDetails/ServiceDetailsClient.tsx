@@ -28,9 +28,13 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
 
 interface ServicePageProps {
   service: Services;
+  nextServiceHref: string;
 }
 
-export function ServiceDetailsContent({ service }: ServicePageProps) {
+export function ServiceDetailsContent({
+  service,
+  nextServiceHref,
+}: ServicePageProps) {
   const IconComponent = iconMap[service.icon];
   return (
     <section className="h-screen w-full flex flex-col justify-center bg-muted/10 pt-16 relative">
@@ -39,22 +43,28 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-4 sm:mb-8 flex justify-between w-full"
+          className="mb-4 sm:mb-8 flex justify-between"
         >
-          <Link href="/#services" className="group ">
-            {/* <ArrowLeftIcon className="h-6 w-6 text-primary mr-2" /> */}
-            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
-              Back to All Services
+          <Link
+            href="/#services"
+            className="group flex justify-between items-center"
+          >
+            <ArrowLeftIcon className="h-6 w-6 text-primary mr-2" />
+            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl flex items-center gap-2">
+              Back <span className="hidden md:block">to all Services</span>
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
           </Link>
-          {/* <Link href="/#services" className="group flex items-center gap-2">
-            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl ">
-              Next Service
+          <Link
+            href={nextServiceHref}
+            className="group flex items-center gap-2"
+          >
+            <div className="relative font-serif font-bold text-lg md:text-xl lg:text-2xl flex items-center gap-2">
+              Next <span className="hidden md:block">Service</span>
               <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
             </div>
             <ArrowRightIcon className="h-6 w-6 text-primary mr-2" />
-          </Link> */}
+          </Link>
         </motion.div>
 
         <motion.div

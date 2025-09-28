@@ -1,13 +1,13 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   FloatingInput,
   FloatingTextarea,
 } from "@/components/ui/floating-input";
-import { Send } from "lucide-react";
+import { Facebook, LucideProps, Mail, Send, Smartphone } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
 import { Footer } from "@/components/Sections/Footer/Footer";
 import { ScrollToTopIndicator } from "@/components/CTA/ScrollToTopIndicator";
@@ -40,6 +40,12 @@ type ContactContentProps = {
       href: string;
     };
   };
+};
+
+const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
+  Mail,
+  Smartphone,
+  Facebook,
 };
 
 export default function ContactClient({ content }: ContactContentProps) {
@@ -120,29 +126,45 @@ export default function ContactClient({ content }: ContactContentProps) {
     >
       <div className="flex-1 flex items-center justify-center">
         <div className="container mx-auto px-6 max-w-2xl pt-16">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8">
             <motion.div
-              className="flex flex-col items-center justify-between pb-0 lg:pb-8"
+              className="flex flex-col items-center justify-center gap-4 lg:gap-12 w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif font-bold text-4xl text-center sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl pb-2 lg:pb-6 gradient-text leading-tighter">
+              <h2 className="font-serif font-bold text-4xl text-center sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl gradient-text leading-tighter">
                 {content.title}
               </h2>
 
-              <div className="flex flex-col items-center justify-center gap-2">
-                {reachOutLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition hover:-translate-y-1"
-                  >
-                    {link.text}
-                  </Link>
-                ))}
+              <div className="flex items-center justify-center  w-full">
+                {reachOutLinks.map((link, index) => {
+                  const IconComponent = iconMap[link.icon];
+                  return (
+                    <div
+                      key={link.href}
+                      className="flex items-center justify-center "
+                    >
+                      <Link
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition hover:-translate-y-1 flex flex-col items-center px-4 sm:px-10"
+                      >
+                        {IconComponent && (
+                          <div>
+                            <IconComponent className="h-8 w-8 text-primary" />
+                          </div>
+                        )}
+                        <span className="hidden md:block">{link.text}</span>
+                      </Link>
+
+                      {index < reachOutLinks.length - 1 && (
+                        <div className=" h-8 md:h-16 w-0.5 bg-border "></div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
 

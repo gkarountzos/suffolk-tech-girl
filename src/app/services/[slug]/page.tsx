@@ -63,5 +63,19 @@ export default async function ServicePage({
     notFound();
   }
 
-  return <ServiceDetailsContent service={service} />;
+  const currentServiceIndex = services.findIndex(
+    (s) => slugify(s.title) === slug
+  );
+
+  const nextServiceIndex = (currentServiceIndex + 1) % services.length;
+
+  const nextServiceHref = services[nextServiceIndex].href;
+  console.log("🚀 ~ ServicePage ~ nextServiceHref:", nextServiceHref);
+
+  return (
+    <ServiceDetailsContent
+      service={service}
+      nextServiceHref={nextServiceHref}
+    />
+  );
 }
