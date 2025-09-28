@@ -7,12 +7,6 @@ import PageWrapper from "@/components/PageWrapper";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster } from "sonner";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

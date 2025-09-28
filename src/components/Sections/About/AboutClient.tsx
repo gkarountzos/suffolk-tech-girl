@@ -12,10 +12,6 @@ type AboutContentProps = {
     titleSuffix: string;
     paragraphs: string[];
     card: {
-      imageSection: {
-        title: string;
-        subtitle: string;
-      };
       featuresSection: {
         title: string;
         features: string[];

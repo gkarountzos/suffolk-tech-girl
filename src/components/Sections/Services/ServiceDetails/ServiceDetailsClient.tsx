@@ -85,16 +85,20 @@ export function ServiceDetailsContent({ service }: ServicePageProps) {
           </div>
         </motion.div>
 
-        <motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <h2 className="font-serif font-bold text-xl  gradient-text leading-tighter py-8 text-center">
-            Don't see your problem listed? I might still be able to help.
+            Don&apos;t see your problem listed? I might still be able to help.
           </h2>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex items-center justify-center"
         >
           <FancyButton href="/#contact">Get In Touch</FancyButton>

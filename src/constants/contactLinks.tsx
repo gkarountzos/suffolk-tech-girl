@@ -4,16 +4,16 @@ interface SocialLink {
 }
 
 export const reachOutLinks: SocialLink[] = [
+  // {
+  //   href: "https://www.facebook.com",
+  //   text: "Facebook",
+  // },
   {
-    href: "https://www.facebook.com",
-    text: "Facebook",
+    href: "mailto:suffolkstechgirl@gmail.com",
+    text: "suffolkstechgirl@gmail.com",
   },
   {
-    href: "mailto:info@example.com",
-    text: "info@example.com",
-  },
-  {
-    href: "tel:+1234567890",
-    text: "1234567890",
+    href: "tel:+07517465924",
+    text: "07517 465924",
   },
 ];
