@@ -8,9 +8,9 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Suffolk Tech Help",
-    image: "https://www.suffolktechhelp.co.uk/Logo_Gemma.png",
-    "@id": "https://www.suffolktechhelp.co.uk",
-    url: "https://www.suffolktechhelp.co.uk",
+    image: "https://www.suffolkstechgirl.co.uk/logo.png",
+    "@id": "https://www.suffolkstechgirl.co.uk",
+    url: "https://www.suffolkstechgirl.co.uk",
     telephone: "+44-XXX-XXX-XXXX",
     description:
       "Your friendly, local experts for tech support in Suffolk. We offer computer repair, network setup, mobile support, and personalized tech training.",

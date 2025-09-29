@@ -22,7 +22,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.suffolktechgirl.co.uk"),
+  metadataBase: new URL("https://www.suffolkstechgirl.co.uk"),
 
   title: {
     default: "Suffolk's Tech Girl - Friendly, Personal Tech Support",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Suffolk's Tech Girl - Friendly, Personal Tech Support",
     description:
       "Friendly, one-on-one tech help for your computer, phone, and Wi-Fi troubles in Suffolk. Patient support from your local tech girl.",
-    url: "https://www.suffolktechgirl.co.uk",
+    url: "https://www.suffolkstechgirl.co.uk",
     siteName: "Suffolk's Tech Girl",
     images: [
       {
