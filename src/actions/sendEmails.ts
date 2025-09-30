@@ -50,9 +50,9 @@ export async function sendConfirmationEmail(data: ContactFormData) {
   const emailContent = confirmationEmailTemplate({ name, email, message });
 
   const mailOptions = {
-    from: `"Your Business Name" <${process.env.GMAIL_USER}>`,
+    from: `"Suffolk's Tech Girl" <${process.env.GMAIL_USER}>`,
     to: email,
-    subject: "We've received your message!",
+    subject: "I've received your message!",
     html: emailContent,
   };
 

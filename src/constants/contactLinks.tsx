@@ -6,7 +6,7 @@ interface SocialLink {
 
 export const reachOutLinks: SocialLink[] = [
   {
-    href: "https://www.facebook.com",
+    href: "https://www.facebook.com/people/Suffolks-Tech-Girl/61581545522670/",
     text: "Facebook",
     icon: "Facebook",
   },
