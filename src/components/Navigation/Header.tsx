@@ -2,7 +2,7 @@
 
 import Logo from "@/components/Navigation/Logo";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
-import { CogIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -54,7 +54,14 @@ const Navbar = () => {
             </div>
 
             <div>
-              <CogIcon className="h-8 w-8 md:h-12 md:w-12 animate-[spin_20s_linear_infinite]" />
+              <Image
+                src="/Cog.png"
+                width={48}
+                height={48}
+                quality={100}
+                alt="Logo"
+                className="h-8 w-8 md:h-12 md:w-12 animate-[spin_20s_linear_infinite]"
+              />
             </div>
 
             <div className="pl-2">

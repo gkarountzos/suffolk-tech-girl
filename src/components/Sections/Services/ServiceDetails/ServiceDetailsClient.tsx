@@ -73,7 +73,7 @@ export function ServiceDetailsContent({
           transition={{ duration: 0.8, delay: 0.2 }}
           className="p-4 sm:p-8 md:p-12 shadow-lg border-2 border-primary bg-muted/10"
         >
-          <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-6 mb-2 sm:mb-6">
+          <div className="flex flex-row items-center text-center md:text-left gap-6 mb-2 sm:mb-6">
             {IconComponent && (
               <div className="flex-shrink-0">
                 <IconComponent className="h-12 w-12 text-primary" />
