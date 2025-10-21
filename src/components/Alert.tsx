@@ -36,7 +36,7 @@ export function SupportAlert() {
             style={{ pointerEvents: "none" }}
           >
             <span className="font-semibold">
-              Support for Windows 10 ends on 14th October 2025.
+              Support for Windows 10 ended on 14th October 2025.
             </span>{" "}
             Continuing to use Windows 10 past this date will leave your device
             open to viruses. <span className="font-semibold">I can help.</span>
