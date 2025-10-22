@@ -70,7 +70,6 @@ export default async function ServicePage({
   const nextServiceIndex = (currentServiceIndex + 1) % services.length;
 
   const nextServiceHref = services[nextServiceIndex].href;
-  console.log("🚀 ~ ServicePage ~ nextServiceHref:", nextServiceHref);
 
   return (
     <ServiceDetailsContent

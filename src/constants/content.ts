@@ -46,6 +46,7 @@ export interface Services {
   icon: string;
   title: string;
   description: string;
+  featuresTitle: string;
   features: string[];
   keywords: string[];
   href: string;
@@ -56,6 +57,7 @@ export const services: Services[] = [
     icon: "Monitor",
     title: "Tech Support",
     description: "Help with a wide range of everyday tech headaches.",
+    featuresTitle: "How I can help:",
     features: [
       "Troubleshooting computer and phone problems",
       "Getting rid of pesky errors and pop-ups",
@@ -79,6 +81,7 @@ export const services: Services[] = [
     icon: "Wifi",
     title: "Device Setup",
     description: "Start fresh with your new tech, set up the right way.",
+    featuresTitle: "How I can help:",
     features: [
       "Setting up new computers, tablets, or phones",
       "Installing and updating software",
@@ -102,6 +105,7 @@ export const services: Services[] = [
     icon: "Smartphone",
     title: "Advice and Recommendations",
     description: "Clear, honest guidance on the right tech for you.",
+    featuresTitle: "How I can help:",
     features: [
       "Choosing the right laptop, phone, or tablet",
       "Guidance on upgrading vs. repairing",
@@ -124,6 +128,7 @@ export const services: Services[] = [
     icon: "GraduationCap",
     title: "1-to-1 Digital Literacy Classes",
     description: "Learn the skills you need to feel confident with technology.",
+    featuresTitle: "How I can help:",
     features: [
       "How to use email, apps, and the internet with confidence",
       "How to use the internet safely and avoid viruses",
@@ -146,6 +151,7 @@ export const services: Services[] = [
     icon: "Keyboard",
     title: "Custom PC Builds",
     description: "A computer designed and built around your needs.",
+    featuresTitle: "How I can help:",
     features: [
       "Designing a PC that matches your budget and goals",
       "Helping choose the right parts (without overspending)",
@@ -168,6 +174,7 @@ export const services: Services[] = [
     title: "Gaming Support",
     description:
       "Help setting up and enjoying your games the way they’re meant to be played.",
+    featuresTitle: "How I can help:",
     features: [
       "Fixing crashes, errors, or performance issues",
       "Setting up gaming PCs, consoles, and accessories",
@@ -188,7 +195,8 @@ export const services: Services[] = [
     icon: "Code2",
     title: "Web App Development",
     description:
-      "Bring your ideas to life with a professional, modern website or web app.",
+      "For professional web development, I've partnered with a trusted specialist to bring your ideas to life. They build modern, high-performance websites and web apps (including this one!) tailored to your needs.",
+    featuresTitle: "What's included:",
     features: [
       "Building custom websites from the ground up",
       "Developing web applications for your business needs",
@@ -206,7 +214,7 @@ export const services: Services[] = [
       "SEO",
       "responsive design",
     ],
-    href: "/services/web-design-and-development",
+    href: "/services/web-app-development",
   },
 ];
 

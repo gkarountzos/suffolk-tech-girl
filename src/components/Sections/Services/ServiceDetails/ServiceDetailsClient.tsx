@@ -92,7 +92,7 @@ export function ServiceDetailsContent({
 
           <div className="border-t border-primary/20 pt-4 sm:pt-6">
             <h3 className="font-serif font-bold sm:text-xl md:text-2xl text-card-foreground mb-4">
-              How I can help:
+              {service.featuresTitle}
             </h3>
             <ul className="space-y-3">
               {service.features.map((feature, index) => (
