@@ -11,6 +11,7 @@ import {
   LucideProps,
   ArrowRightIcon,
   Gamepad2,
+  Code2,
 } from "lucide-react";
 import FancyButton from "@/components/ui/FancyButton";
 import Link from "next/link";
@@ -30,6 +31,7 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Gamepad2,
   GraduationCap,
   Keyboard,
+  Code2,
 };
 
 type ServicesContentProps = {

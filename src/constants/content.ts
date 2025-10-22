@@ -184,6 +184,30 @@ export const services: Services[] = [
     ],
     href: "/services/gaming-support",
   },
+  {
+    icon: "Code2",
+    title: "Web App Development",
+    description:
+      "Bring your ideas to life with a professional, modern website or web app.",
+    features: [
+      "Building custom websites from the ground up",
+      "Developing web applications for your business needs",
+      "Optimizing your site for search engines (SEO) to attract more visitors",
+      "Creating responsive designs that look great on any device",
+      "Setting up e-commerce stores to sell products online",
+      "Offering ongoing maintenance and security updates",
+    ],
+    keywords: [
+      "web development",
+      "website design",
+      "web apps",
+      "e-commerce",
+      "custom website",
+      "SEO",
+      "responsive design",
+    ],
+    href: "/services/web-design-and-development",
+  },
 ];
 
 export const contactContent = {

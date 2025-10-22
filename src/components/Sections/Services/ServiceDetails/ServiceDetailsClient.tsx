@@ -14,6 +14,7 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   Keyboard,
+  Code2,
 } from "lucide-react";
 import { Services } from "@/constants/content";
 
@@ -24,6 +25,7 @@ const iconMap: { [key: string]: React.ComponentType<LucideProps> } = {
   Gamepad2,
   GraduationCap,
   Keyboard,
+  Code2,
 };
 
 interface ServicePageProps {
