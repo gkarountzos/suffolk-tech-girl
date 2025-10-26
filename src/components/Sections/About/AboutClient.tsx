@@ -11,6 +11,8 @@ import {
   Car,
   GraduationCap,
 } from "lucide-react";
+import Image from "next/image";
+import aboutMeImage from "../../../../public/Image_of_Me.webp";
 
 type AboutContentProps = {
   content: {
@@ -84,9 +86,6 @@ export default function AboutClient({ content }: AboutContentProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {content.title}
-              <span className="">
-                {content.titleHighlight} <br />{" "}
-              </span>
               {content.titleSuffix}
             </motion.h2>
 
@@ -115,6 +114,13 @@ export default function AboutClient({ content }: AboutContentProps) {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
+                <div className="absolute top-6 right-8 transform">
+                  <Image
+                    src={aboutMeImage}
+                    alt="Image of Me"
+                    className="w-24 sm:w-32 md:w-48 lg:w-36 xl:w-48 rounded-md  object-cover"
+                  />
+                </div>
                 <h3 className="font-serif font-semibold text-xl">
                   {content.card.featuresSection.title}
                 </h3>
