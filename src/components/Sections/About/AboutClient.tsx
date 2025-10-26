@@ -79,15 +79,22 @@ export default function AboutClient({ content }: AboutContentProps) {
             animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.h2
-              className="font-serif font-bold text-5xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {content.title}
-              {content.titleSuffix}
-            </motion.h2>
+            <div className="flex justify-between items-center">
+              <motion.h2
+                className="font-serif font-bold text-5xl md:text-5xl lg:text-6xl 2xl:text-8xl mb-6 gradient-text leading-tighter"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isMounted && isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {content.title}
+                {content.titleSuffix}
+              </motion.h2>
+              <Image
+                src={aboutMeImage}
+                alt="Image of Me"
+                className="block lg:hidden w-20 xs:w-24 md:w-32 mb-6 rounded-full"
+              />
+            </div>
 
             {content.paragraphs.map((text, index) => (
               <motion.p
@@ -118,7 +125,7 @@ export default function AboutClient({ content }: AboutContentProps) {
                   <Image
                     src={aboutMeImage}
                     alt="Image of Me"
-                    className="w-24 sm:w-32 md:w-48 lg:w-36 xl:w-48 rounded-md  object-cover"
+                    className="hidden lg:block w-48 lg:w-36 xl:w-48 rounded-md  object-cover"
                   />
                 </div>
                 <h3 className="font-serif font-semibold text-xl">
